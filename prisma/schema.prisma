@@ -24,6 +24,7 @@ model Account {
     scope                     String?
     id_token                  String? // @db.Text
     session_state             String?
+    password                  String?
     user                      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
     @@unique([provider, providerAccountId])
 }
@@ -39,9 +40,9 @@ model Session {
 model User {
     id            String    @id @default(cuid())
     name          String?
-    email         String   @unique
+    email         String    @unique
     emailVerified DateTime?
-    image         String?
+    image         String?   @default("https://res.cloudinary.com/dfptc3ila/image/upload/v1672134561/default_hmbqah.jpg")
     accounts      Account[]
     sessions      Session[]
 }

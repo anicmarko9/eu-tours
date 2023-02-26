@@ -5,7 +5,7 @@ const config = {
     domains: [
       "lh3.googleusercontent.com",
       "avatars.githubusercontent.com",
-      // "res.cloudinary.com",
+      "res.cloudinary.com",
     ],
   },
   swcMinify: true,
