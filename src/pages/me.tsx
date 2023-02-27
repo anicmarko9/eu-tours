@@ -1,18 +1,14 @@
 import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import { getSession } from "next-auth/react";
 import React from "react";
 import { api } from "src/utils/api";
-import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
-const VerifyEmail: NextPage = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  const verifyEmail = api.auth.verifyEmail.useMutation();
+const UserSettingsPage: NextPage = () => {
+  const verifyEmail = api.email.verifyEmail.useMutation();
+  const sendEmail = api.email.sendEmail.useMutation();
   const handleVerify = () => {
     try {
-      verifyEmail.mutateAsync({ id: id as string });
+      verifyEmail.mutateAsync();
       toast.success("Account verified.", {
         position: "bottom-left",
       });
@@ -25,12 +21,15 @@ const VerifyEmail: NextPage = () => {
 
   return (
     <div>
+      {/* ask for email, compare token with user id, verify */}
       <p>Click the button below to verify your email.</p>
       <button type="button" onClick={handleVerify}>
         Verify Email
       </button>
+      {/* change name */}
+      {/* List all accounts, CRUD */}
     </div>
   );
 };
 
-export default VerifyEmail;
+export default UserSettingsPage;
