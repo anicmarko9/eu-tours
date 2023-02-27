@@ -2,6 +2,7 @@ import { Session } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import { prisma } from "./../db";
 import bcrypt from "bcryptjs";
+import { sendVerificationEmail } from "./email.service";
 
 const signToken = (id: string): string => {
   if (!process.env.JWT_SECRET || !process.env.JWT_EXPIRES_IN)
@@ -28,6 +29,22 @@ const createSession = async (userId: string): Promise<Session> => {
     },
   });
   return session;
+};
+
+export const verifyEmail = async (id: string): Promise<void> => {
+  try {
+    const user = await prisma.user.update({
+      where: {
+        id,
+      },
+      data: {
+        emailVerified: new Date(Date.now()),
+      },
+    });
+    if (!user) throw new Error("This user doesn't exist.");
+  } catch (err) {
+    throw err;
+  }
 };
 
 export const signUp = async (input: {
@@ -57,6 +74,7 @@ export const signUp = async (input: {
         password: input.password,
       },
     });
+    await sendVerificationEmail(newUser);
     return session;
   } catch (err) {
     const error = err as Error;

@@ -10,8 +10,9 @@ const Header = (): JSX.Element => {
   const [customSession, setCustomSession] = useState<
     Session & { user: User }
   >();
-
   const handleLogout = async (): Promise<void> => {
+    document.cookie =
+      "session-token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
     window.sessionStorage.clear();
     window.location.reload();
   };
