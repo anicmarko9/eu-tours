@@ -8,10 +8,6 @@ const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
     <div>
       <Head>
         <title>EU - Tours</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <Header />
       <main>{children}</main>

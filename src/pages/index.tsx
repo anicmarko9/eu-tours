@@ -1,21 +1,14 @@
-import type { Session } from "next-auth";
-import type { GetServerSideProps, NextPage } from "next";
-import Layout from "src/components/Layout";
-import { getServerAuthSession } from "src/server/auth";
+import type { NextPage } from "next";
+import Layout from "src/components/layout/Layout";
 
-const Home: NextPage<{ data: Session | null }> = ({ data }) => {
+const Home: NextPage = () => {
   return (
     <Layout>
-      <p>{data?.user?.name}</p>
+      <div>
+        <p>Content</p>
+      </div>
     </Layout>
   );
 };
 
 export default Home;
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const data = await getServerAuthSession(ctx);
-  return {
-    props: { data },
-  };
-};
