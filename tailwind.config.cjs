@@ -6,7 +6,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-roboto)", ...fontFamily.sans],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+      colors: {
+        primary: "#dd71c6",
+        secondary: "#73c3f4",
+        tertiary: "#ffd900",
+        bodyBg: "#ddd",
+      },
+      backgroundImage: {
+        "mock-img": "url('/test.png')",
       },
     },
   },
