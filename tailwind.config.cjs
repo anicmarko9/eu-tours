@@ -12,6 +12,10 @@ module.exports = {
         primary: "#dd71c6",
         secondary: "#73c3f4",
         tertiary: "#ffd900",
+        bodyBg: "#ddd",
+      },
+      backgroundImage: {
+        "mock-img": "url('/test.png')",
       },
     },
   },

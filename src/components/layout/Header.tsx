@@ -7,7 +7,7 @@ const Header = (): JSX.Element => {
   const loading: boolean = status === "loading";
 
   return (
-    <header className="top-0 2xl:px-32 xl:px-16 px-8 py-4 w-full">
+    <header className="absolute top-0 2xl:px-32 xl:px-16 px-8 py-4 w-full z-10 text-white">
       <nav className="flex justify-between items-center h-16">
         <div className="xl:w-2/3 w-3/5 flex justify-between">
           <div className="flex justify-start w-1/4">Logo</div>
