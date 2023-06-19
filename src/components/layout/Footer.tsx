@@ -1,3 +1,5 @@
+import FooterLinkGroup from "../FooterLinkGroup";
+
 const Footer = (): JSX.Element => {
   return (
     <footer className="relative 2xl:px-32 xl:px-16 px-8 py-8 w-full z-10 text-black">
@@ -13,67 +15,37 @@ const Footer = (): JSX.Element => {
             </p>
           </div>
           <div className="w-2/3 flex justify-between">
-            <div className="space-y-4">
-              <h5 className="text-xl font-bold uppercase tracking-wider">
-                Discover
-              </h5>
-              <ul className="space-y-4">
-                <li>
-                  <a href="/about-us">Why EU Tours</a>
-                </li>
-                <li>
-                  <a href="/bookings">Support Us</a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h5 className="text-xl font-bold uppercase tracking-wider">
-                Services
-              </h5>
-              <ul className="space-y-4">
-                <li>
-                  <a href="/faqs">FAQs</a>
-                </li>
-                <li>
-                  <a href="/support">Support Center</a>
-                </li>
-                <li>
-                  <a href="/contact">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h5 className="text-xl font-bold uppercase tracking-wider">
-                Comunity
-              </h5>
-              <ul className="space-y-4">
-                <li>
-                  <a href="/capital">Capital</a>
-                </li>
-                <li>
-                  <a href="/security">Security</a>
-                </li>
-                <li>
-                  <a href="/blogs">News and Blogs</a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h5 className="text-xl font-bold uppercase tracking-wider">
-                About
-              </h5>
-              <ul className="space-y-4">
-                <li>
-                  <a href="/about-us">About Us</a>
-                </li>
-                <li>
-                  <a href="/features">Features</a>
-                </li>
-                <li>
-                  <a href="/blogs">News & Blogs</a>
-                </li>
-              </ul>
-            </div>
+            <FooterLinkGroup
+              title="Discover"
+              links={[
+                { link: "/about-us", text: "Why EU Tours" },
+                { link: "/bookings", text: "Support Us" },
+              ]}
+            />
+            <FooterLinkGroup
+              title="Services"
+              links={[
+                { link: "/faqs", text: "FAQs" },
+                { link: "/support", text: "Support Center" },
+                { link: "/contact", text: "Contact Us" },
+              ]}
+            />
+            <FooterLinkGroup
+              title="Community"
+              links={[
+                { link: "/capital", text: "Capital" },
+                { link: "/security", text: "Security" },
+                { link: "/blogs", text: "News and Blogs" },
+              ]}
+            />
+            <FooterLinkGroup
+              title="About"
+              links={[
+                { link: "/about-us", text: "About Us" },
+                { link: "/features", text: "Features" },
+                { link: "/blogs", text: "News & Blogs" },
+              ]}
+            />
           </div>
         </div>
         <div className="flex w-full justify-between">
