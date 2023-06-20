@@ -1,4 +1,4 @@
-import FooterLinkGroup from "../FooterLinkGroup";
+import FooterLinkGroup from "../components/FooterLinkGroup";
 
 const Footer = (): JSX.Element => {
   return (
@@ -18,32 +18,32 @@ const Footer = (): JSX.Element => {
             <FooterLinkGroup
               title="Discover"
               links={[
-                { link: "/about-us", text: "Why EU Tours" },
-                { link: "/bookings", text: "Support Us" },
+                { link: "#", text: "Why EU Tours" },
+                { link: "#", text: "Support Us" },
               ]}
             />
             <FooterLinkGroup
               title="Services"
               links={[
-                { link: "/faqs", text: "FAQs" },
-                { link: "/support", text: "Support Center" },
-                { link: "/contact", text: "Contact Us" },
+                { link: "#", text: "FAQs" },
+                { link: "#", text: "Support Center" },
+                { link: "#", text: "Contact Us" },
               ]}
             />
             <FooterLinkGroup
               title="Community"
               links={[
-                { link: "/capital", text: "Capital" },
-                { link: "/security", text: "Security" },
-                { link: "/blogs", text: "News and Blogs" },
+                { link: "#", text: "Capital" },
+                { link: "#", text: "Security" },
+                { link: "#", text: "News and Blogs" },
               ]}
             />
             <FooterLinkGroup
               title="About"
               links={[
-                { link: "/about-us", text: "About Us" },
-                { link: "/features", text: "Features" },
-                { link: "/blogs", text: "News & Blogs" },
+                { link: "#", text: "About Us" },
+                { link: "#", text: "Features" },
+                { link: "#", text: "News & Blogs" },
               ]}
             />
           </div>
