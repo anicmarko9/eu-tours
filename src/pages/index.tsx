@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import VignetteScreen from "src/components/VignetteScreen";
-import Layout from "src/components/layout/Layout";
+import Layout from "src/layout/Layout";
 
 const Home: NextPage = () => {
   return (
