@@ -45,14 +45,14 @@ const Header = (): JSX.Element => {
   }, []);
 
   return (
-    <header className="absolute top-0 2xl:px-32 xl:px-16 sm:px-16 px-4 py-4 w-full z-10 text-white">
-      <nav className="flex justify-between items-center h-16">
-        <div className="flex justify-start w-1/6">
+    <header className="absolute top-0 z-10 w-full px-4 py-4 text-white sm:px-16 xl:px-16 2xl:px-32">
+      <nav className="flex h-16 items-center justify-between">
+        <div className="flex w-1/6 justify-start">
           <a href="#">Logo</a>
         </div>
         {windowWidth >= 1024 ? (
-          <div className="flex justify-between w-full xl:w-4/5 xl:h-16 items-center">
-            <ul className="flex justify-between w-7/12 xl:w-2/3">
+          <div className="flex w-full items-center justify-between xl:h-16 xl:w-4/5">
+            <ul className="flex w-7/12 justify-between xl:w-2/3">
               <Link href="#">
                 <li>Discover</li>
               </Link>
@@ -84,7 +84,7 @@ const Header = (): JSX.Element => {
                           alt="User avatar"
                           width={32}
                           height={32}
-                          className="rounded-full mr-4"
+                          className="mr-4 rounded-full"
                         />
                       )}
                       <small>Signed in as</small>
