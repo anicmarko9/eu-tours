@@ -3,5 +3,16 @@
 @tailwind utilities;
 
 @layer components {
-
+    .descriptionText {
+        @apply text-xs sm:text-sm md:flex-nowrap lg:text-base
+    }
+    .titleText {
+        @apply text-base sm:text-lg lg:text-xl font-bold uppercase tracking-wider
+    }
+    .containerSpacing {
+        @apply p-4 2xl:px-32 2xl:py-16
+    }
+    .gradientOrange {
+        @apply bg-gradient-to-r from-darkerOrange to-lighterOrange
+    }
 }

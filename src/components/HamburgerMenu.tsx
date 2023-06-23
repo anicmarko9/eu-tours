@@ -37,23 +37,16 @@ const BurgerMenu = ({
 
   return (
     <div
-      className={`fixed top-0 z-30 h-full w-full text-black ${
-        // check if menu is open on different resolutions
-        isMenuOpen
-          ? windowWidth < 640
-            ? "animate-slideInRight"
-            : "animate-slideInRightSM"
-          : windowWidth < 640
-          ? "scale-0 animate-slideOutRight"
-          : "scale-0 animate-slideOutRightSM"
+      className={`fixed top-0 z-30 h-screen w-full text-black ${
+        isMenuOpen ? "animate-slideInRight" : "scale-0 animate-slideOutRight"
       }`}
     >
-      <div className="fixed right-0 top-0 z-50 h-full w-full bg-white py-2 pl-8 pr-4 shadow-lg sm:w-3/5 sm:py-3 sm:pl-16 sm:pr-16">
-        <div className="flex h-14 items-center justify-between text-2xl">
+      <div className="absolute right-0 top-0 z-30 h-full w-full bg-white p-4 shadow-lg sm:w-3/5">
+        <div className="flex items-center justify-between text-2xl">
           <a href="/">EU Tours</a>
           <IoClose
             onClick={toggleMenu}
-            className="h-8 w-8 cursor-pointer rounded-full text-primary transition-all duration-200 ease-in hover:bg-gray-200"
+            className="h-8 w-8 cursor-pointer rounded-full text-secondary transition-all duration-200 ease-in hover:bg-gray-200"
           />
         </div>
         <hr className="border-1" />
@@ -63,11 +56,11 @@ const BurgerMenu = ({
           <a href="/weight-loss">Community</a>
           <a href="/stories">About Us</a>
         </div>
-        <div
-          className="fixed left-0 top-0 z-40 h-0 w-0 bg-black bg-opacity-30 sm:h-full sm:w-2/5"
-          onClick={toggleMenu}
-        ></div>
       </div>
+      <div
+        className="absolute left-0 top-0 z-30 h-0 w-0 bg-black bg-opacity-30 sm:h-full sm:w-2/5"
+        onClick={toggleMenu}
+      ></div>
     </div>
   );
 };

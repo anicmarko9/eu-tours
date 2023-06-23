@@ -9,36 +9,29 @@ module.exports = {
         montserrat: ["Montserrat", "sans-serif"],
       },
       colors: {
-        primary: "#dd71c6",
-        secondary: "#73c3f4",
-        tertiary: "#ffd900",
-        bodyBg: "#ddd",
+        primary: "#2B2A4C",
+        secondary: "#FF6000",
+        tertiary: "#4F4557",
+        header: "#9DB2BF",
+        darkerOrange: "#E65100",
+        lighterOrange: "#FF8000",
+        bodyBg: "#DDD",
       },
       backgroundImage: {
         "mock-img": "url('/test.png')",
       },
       animation: {
-        slideInRightSM: "slideInRightSM 1s ease-in-out",
         slideInRight: "slideInRight 1s ease-in-out",
-        slideOutRightSM: "slideOutRightSM 1s ease-in-out",
         slideOutRight: "slideOutRight 1s ease-in-out",
       },
       keyframes: {
-        slideInRightSM: {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(-64px)" },
-        },
         slideInRight: {
           "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(-16px)" },
-        },
-        slideOutRightSM: {
-          "100%": { transform: "translateX(100%)" },
-          "0%": { transform: "translateX(-64px)" },
+          "100%": { transform: "translateX(0px)" },
         },
         slideOutRight: {
           "100%": { transform: "translateX(100%)" },
-          "0%": { transform: "translateX(-16px)" },
+          "0%": { transform: "translateX(0px)" },
         },
       },
     },
