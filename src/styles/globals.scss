@@ -13,6 +13,6 @@
         @apply p-4 2xl:px-32 2xl:py-16
     }
     .gradientOrange {
-        @apply bg-gradient-to-r from-darkerOrange to-lighterOrange
+        @apply bg-gradient-to-r from-darkerOrange to-lighterOrange hover:border-secondary hover:bg-none hover:bg-white font-bold hover:text-secondary transition-all duration-200 ease-out
     }
 }

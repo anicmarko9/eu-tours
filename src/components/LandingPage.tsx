@@ -16,54 +16,65 @@ const LandingPage = (): JSX.Element => {
         />
       </div>
       <VignetteScreen />
-      <div className="containerSpacing relative flex h-screen w-full space-x-16 text-header">
-        <div className="flex h-full w-1/2 flex-col justify-center">
-          <p className="flex flex-col text-base font-bold uppercase tracking-wider sm:text-lg lg:text-xl 2xl:text-8xl">
+      <div className="containerSpacing relative flex h-screen w-full text-header sm:flex-wrap lg:flex-nowrap">
+        <div className="flex h-full w-full flex-col justify-evenly pt-16 lg:h-full lg:w-7/12 lg:justify-center">
+          <p className="flex flex-col self-center text-center text-4xl font-bold uppercase tracking-wider sm:self-start sm:text-start sm:text-6xl lg:text-7xl xl:text-8xl">
             <span className="text-white">Live your</span>
             <span className="text-secondary">adventure</span>
           </p>
-          <p className="w-2/3 py-4 text-xs sm:text-sm md:flex-nowrap lg:text-base 2xl:text-lg">
+          <div className="flex h-[40%] w-full items-center justify-end lg:hidden lg:h-full lg:w-5/12">
+            <Image
+              src="/journey.png"
+              alt="Landing Page Image"
+              width={400}
+              height={400}
+              className="h-full w-full object-contain lg:h-auto lg:w-auto"
+            />
+          </div>
+          <p className="w-full text-xs leading-relaxed sm:w-1/2 sm:text-sm md:flex-nowrap md:text-base lg:py-4 xl:text-lg">
             {
-              "Don't wait until tomorrow, discover your adventure now and feel the sensation of closeness to nature around you"
+              "Don't wait until tomorrow, discover your adventure now and feel the sensation of closeness to nature around you."
             }
           </p>
-          <div className="flex w-full justify-between rounded-lg p-4 backdrop-blur-lg 2xl:text-lg">
-            <div className="flex w-1/3 items-center space-x-4">
-              <SlLocationPin className="text-3xl text-green-400" />
-              <div className="">
-                <p className="space-x-4">
-                  <span>Location</span>
-                  <span>
-                    <IoIosArrowDown className="inline text-secondary" />
-                  </span>
-                </p>
-                <p className="text-white">Zlatibor, Serbia</p>
+          <div className="flex w-fit flex-col justify-between space-x-0 space-y-4 self-center rounded-lg p-4 text-sm backdrop-blur-lg sm:flex-row sm:space-x-4 sm:space-y-0 sm:text-base lg:self-start">
+            <div className="flex w-fit flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+              <div className="flex items-center space-x-4 sm:w-fit">
+                <SlLocationPin className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
+                <div>
+                  <p className="space-x-2">
+                    <span>Location</span>
+                    <span>
+                      <IoIosArrowDown className="inline text-secondary" />
+                    </span>
+                  </p>
+                  <p className="text-white">Zlatibor, Serbia</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4 sm:w-fit">
+                <MdOutlineCalendarMonth className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
+                <div>
+                  <p className="space-x-2">
+                    <span>Date</span>
+                    <span>
+                      <IoIosArrowDown className="inline text-secondary" />
+                    </span>
+                  </p>
+                  <p className="text-white">16 September 2023</p>
+                </div>
               </div>
             </div>
-            <div className="flex w-1/3 items-center space-x-4">
-              <MdOutlineCalendarMonth className="text-3xl text-green-400" />
-              <div className="">
-                <p className="space-x-4">
-                  <span>Date</span>
-                  <span>
-                    <IoIosArrowDown className="inline text-secondary" />
-                  </span>
-                </p>
-                <p className="text-white">16 August 2023</p>
-              </div>
-            </div>
-            <button className="gradientOrange rounded-lg border-2 border-tertiary px-4 font-semibold tracking-wider text-white 2xl:text-lg">
+            <button className="gradientOrange w-fit self-center rounded-lg border-2 border-primary px-4 py-2 font-semibold tracking-wider text-white sm:self-auto sm:py-0 xl:text-base 2xl:text-lg">
               Search
             </button>
           </div>
         </div>
-        <div className="flex h-full w-1/2 justify-center">
+        <div className="flex h-[40%] w-full items-center justify-end max-[1023.9px]:hidden lg:h-full lg:w-5/12">
           <Image
             src="/journey.png"
             alt="Landing Page Image"
-            width={440}
-            height={440}
-            className="object-contain"
+            width={400}
+            height={400}
+            className="h-full w-full object-contain"
           />
         </div>
       </div>
