@@ -2,17 +2,14 @@ import FooterLinkGroup from "../components/FooterLinkGroup";
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="relative z-10 w-full px-4 py-4 text-black lg:px-6 lg:py-6 xl:px-8 xl:py-8 2xl:px-16">
+    <footer className="containerSpacing relative z-10 w-full">
       <div className="flex flex-col space-y-4 lg:space-y-8 xl:space-y-12">
         <div className="flex flex-col justify-between lg:flex-row">
           <div className="w-full space-y-4 sm:w-1/2 lg:w-1/5 xl:w-1/4">
-            <a
-              className="text-base font-bold uppercase tracking-wider sm:text-lg lg:text-xl"
-              href="/"
-            >
+            <a className="titleText" href="/">
               Logo
             </a>
-            <p className="text-xs sm:text-sm lg:text-base">
+            <p className="descriptionText">
               Our mission is to make everyone able to feel the attachment back
               to nature by providing an unforgettable experience.
             </p>
@@ -53,7 +50,7 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
         <hr className="mt-4 w-full border border-black border-opacity-20 lg:hidden" />
-        <div className="flex w-full flex-wrap justify-between text-xs sm:text-sm md:flex-nowrap lg:text-base">
+        <div className="descriptionText flex w-full flex-wrap justify-between md:flex-nowrap">
           <p className="xl:x-[60%] order-last flex w-full pt-4 md:order-first md:w-1/2 md:pt-0">
             Copyright by EU Tours. All rights reserved.
           </p>

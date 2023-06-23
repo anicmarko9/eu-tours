@@ -26,7 +26,7 @@ module.exports = {
       keyframes: {
         slideInRightSM: {
           "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(-64px)" },
+          "100%": { transform: "translateX(-16px)" },
         },
         slideInRight: {
           "0%": { transform: "translateX(100%)" },
@@ -34,7 +34,7 @@ module.exports = {
         },
         slideOutRightSM: {
           "100%": { transform: "translateX(100%)" },
-          "0%": { transform: "translateX(-64px)" },
+          "0%": { transform: "translateX(-16px)" },
         },
         slideOutRight: {
           "100%": { transform: "translateX(100%)" },
