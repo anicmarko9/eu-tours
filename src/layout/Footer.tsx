@@ -2,11 +2,11 @@ import FooterLinkGroup from "../components/FooterLinkGroup";
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="containerSpacing relative z-10 w-full">
+    <footer className="containerSpacing relative z-10 w-full text-tertiary">
       <div className="flex flex-col space-y-4 lg:space-y-8 xl:space-y-12">
         <div className="flex flex-col justify-between lg:flex-row">
           <div className="w-full space-y-4 sm:w-1/2 lg:w-1/5 xl:w-1/4">
-            <a className="titleText" href="/">
+            <a className="titleText text-secondary" href="/">
               Logo
             </a>
             <p className="descriptionText">

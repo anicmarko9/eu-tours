@@ -46,79 +46,82 @@ const Header = (): JSX.Element => {
   }, []);
 
   return (
-    <header className="containerSpacing absolute top-0 z-10 w-full text-white">
-      <nav className="descriptionText flex h-8 items-center justify-between">
-        <div className="flex h-full w-1/5 items-center justify-start">
-          <a href="#">Logo</a>
-        </div>
-        {windowWidth >= 1024 ? (
-          <div className="flex h-full w-full items-center justify-between xl:w-4/5">
-            <ul className="flex h-full w-2/3 items-center justify-between xl:w-2/3">
-              <Link href="#">
-                <li>Discover</li>
-              </Link>
-              <Link href="#">
-                <li>Services</li>
-              </Link>
-              <Link href="#">
-                <li>Community</li>
-              </Link>
-              <Link href="#">
-                <li>About Us</li>
-              </Link>
-            </ul>
-            <div className="h-full w-1/4 xl:w-[22.5%]">
-              {loading ? (
-                <div className="flex justify-end">Loading...</div>
-              ) : !session ? (
-                <div className="flex justify-end">
-                  <button onClick={() => void signIn()}>Sign in</button>
-                </div>
-              ) : (
-                <div className="flex justify-between">
-                  <div className="flex space-x-2">
-                    {session.user?.image && (
-                      <Image
-                        src={session.user.image}
-                        alt="User Avatar"
-                        width={32}
-                        height={32}
-                        className="rounded-full"
-                      />
-                    )}
-                    <div className="flex flex-col">
-                      <small className="h-4 leading-3">
-                        {getEmailUsername(session.user?.email as string)}
-                      </small>
-                      <small className="h-4 leading-3">
-                        {session.user?.name}
-                      </small>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() =>
-                      void signOut({ callbackUrl: "http://localhost:3000" })
-                    }
-                  >
-                    Sign out
-                  </button>
-                </div>
-              )}
-            </div>
+    <>
+      <header className="containerSpacing absolute top-0 z-10 w-full text-header backdrop-blur-lg 2xl:px-32 2xl:py-4">
+        <nav className="descriptionText flex h-8 items-center justify-between">
+          <div className="titleText flex h-full w-1/5 items-center justify-start text-secondary">
+            <a href="#">Logo</a>
           </div>
-        ) : (
-          <RxHamburgerMenu
-            className="h-8 w-8 cursor-pointer text-primary hover:opacity-60"
-            onClick={toggleMenu}
-          />
-        )}
-        <HamburgerMenu
-          toggleMenu={toggleMenu}
-          isMenuOpen={isMenuOpen}
-          isMenuOpenLate={isMenuOpenLate}
-        />
-      </nav>
-    </header>
+          {windowWidth >= 1024 ? (
+            <div className="flex h-full w-full items-center justify-between xl:w-4/5">
+              <ul className="flex h-full w-2/3 items-center justify-between xl:w-2/3">
+                <Link href="#">
+                  <li>Discover</li>
+                </Link>
+                <Link href="#">
+                  <li>Services</li>
+                </Link>
+                <Link href="#">
+                  <li>Community</li>
+                </Link>
+                <Link href="#">
+                  <li>About Us</li>
+                </Link>
+              </ul>
+              <div className="h-full w-1/4">
+                {loading ? (
+                  <div className="flex justify-end">Loading...</div>
+                ) : !session ? (
+                  <div className="flex justify-end">
+                    <button onClick={() => void signIn()}>Sign in</button>
+                  </div>
+                ) : (
+                  <div className="flex justify-between">
+                    <div className="flex space-x-2">
+                      {session.user?.image && (
+                        <Image
+                          src={session.user.image}
+                          alt="User Avatar"
+                          width={32}
+                          height={32}
+                          className="rounded-full"
+                        />
+                      )}
+                      <div className="flex flex-col">
+                        <small className="h-4 leading-3">
+                          {getEmailUsername(session.user?.email as string)}
+                        </small>
+                        <small className="h-4 leading-3">
+                          {session.user?.name}
+                        </small>
+                      </div>
+                    </div>
+                    <button
+                      className="gradientOrange rounded-lg border-2 border-tertiary px-4 text-white"
+                      onClick={() =>
+                        void signOut({ callbackUrl: "http://localhost:3000" })
+                      }
+                    >
+                      Sign out
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          ) : (
+            <RxHamburgerMenu
+              className="h-8 w-8 cursor-pointer text-secondary hover:opacity-60"
+              onClick={toggleMenu}
+            />
+          )}
+        </nav>
+      </header>
+      <HamburgerMenu
+        toggleMenu={toggleMenu}
+        isMenuOpen={isMenuOpen}
+        isMenuOpenLate={isMenuOpenLate}
+      />
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ const ToursSlideshow = (): JSX.Element => {
         />
       </div>
       <VignetteScreen />
-      <div className="w=full relative flex h-screen space-x-16 px-8 pb-4 pt-28 text-white xl:px-16 2xl:px-32">
+      <div className="containerSpacing relative flex h-screen w-full space-x-16 text-white">
         <div className="flex h-full w-1/2 flex-col justify-center">
           <div className="flex h-4/5 space-x-4">
             <div className="w-2/5">

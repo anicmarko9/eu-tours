@@ -7,7 +7,7 @@ const FooterLinkGroup = ({
 }): JSX.Element => {
   return (
     <div className="w-fit space-y-4 pt-4 max-[480px]:w-full lg:pt-0">
-      <h5 className="titleText">{title}</h5>
+      <h5 className="titleText text-primary">{title}</h5>
       <ul className="descriptionText space-y-4">
         {links.map(
           ({ link, text }): JSX.Element => (
