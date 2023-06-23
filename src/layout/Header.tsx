@@ -68,12 +68,17 @@ const Header = (): JSX.Element => {
                   <li>About Us</li>
                 </Link>
               </ul>
-              <div className="h-full w-1/4">
+              <div className="h-full w-[150px]">
                 {loading ? (
                   <div className="flex justify-end">Loading...</div>
                 ) : !session ? (
                   <div className="flex justify-end">
-                    <button onClick={() => void signIn()}>Sign in</button>
+                    <button
+                      className="gradientOrange rounded-lg border-2 border-tertiary px-4 text-white"
+                      onClick={() => void signIn()}
+                    >
+                      Sign in
+                    </button>
                   </div>
                 ) : (
                   <div className="flex justify-between">
@@ -87,14 +92,6 @@ const Header = (): JSX.Element => {
                           className="rounded-full"
                         />
                       )}
-                      <div className="flex flex-col">
-                        <small className="h-4 leading-3">
-                          {getEmailUsername(session.user?.email as string)}
-                        </small>
-                        <small className="h-4 leading-3">
-                          {session.user?.name}
-                        </small>
-                      </div>
                     </div>
                     <button
                       className="gradientOrange rounded-lg border-2 border-tertiary px-4 text-white"
