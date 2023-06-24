@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FooterLinkGroup from "../components/FooterLinkGroup";
 import Image from "next/image";
 
@@ -7,7 +8,7 @@ const Footer = (): JSX.Element => {
       <div className="flex flex-col space-y-4 lg:space-y-8 xl:space-y-12">
         <div className="flex flex-col justify-between lg:flex-row">
           <div className="w-full space-y-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
-            <a className="flex h-12 w-full items-center" href="/">
+            <Link className="flex h-12 w-full items-center" href="/">
               <Image
                 src="/logo.png"
                 alt="Logo"
@@ -18,7 +19,7 @@ const Footer = (): JSX.Element => {
               <span className="titleText hoverEffect p-[10px] pr-0 text-secondary hover:text-primary">
                 EU Tours
               </span>
-            </a>
+            </Link>
             <p className="descriptionText lg:w-4/5">
               Our mission is to make everyone able to feel the attachment back
               to nature by providing an unforgettable experience.

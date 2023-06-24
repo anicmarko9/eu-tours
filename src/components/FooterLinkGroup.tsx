@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const FooterLinkGroup = ({
   title,
   links,
@@ -14,9 +16,9 @@ const FooterLinkGroup = ({
         {links.map(
           ({ link, text }): JSX.Element => (
             <li key={link}>
-              <a className="hoverEffect hover:text-secondary" href={link}>
+              <Link className="hoverEffect hover:text-secondary" href={link}>
                 {text}
-              </a>
+              </Link>
             </li>
           )
         )}
