@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { getEmailUsername } from "src/helper/helper";
-import {
+import type {
   LiteralUnion,
   SignInAuthorizationParams,
   SignInOptions,
   SignOutParams,
 } from "next-auth/react/types";
-import { BuiltInProviderType } from "next-auth/providers";
+import type { BuiltInProviderType } from "next-auth/providers";
 import Link from "next/link";
 
 const BurgerMenu = ({
@@ -132,7 +132,7 @@ const BurgerMenu = ({
                 void signOut({
                   callbackUrl:
                     process.env.NODE_ENV === "production"
-                      ? `https://${process.env.VERCEL_URL}`
+                      ? `https://${process.env.VERCEL_URL as string}`
                       : "http://localhost:3000",
                 })
               }

@@ -5,10 +5,10 @@ import { toast } from "react-toastify";
 
 const UserSettingsPage: NextPage = () => {
   const verifyEmail = api.email.verifyEmail.useMutation();
-  const sendEmail = api.email.sendEmail.useMutation();
-  const handleVerify = () => {
+  // const sendEmail = api.email.sendEmail.useMutation();
+  const handleVerify = async () => {
     try {
-      verifyEmail.mutateAsync();
+      await verifyEmail.mutateAsync();
       toast.success("Account verified.", {
         position: "bottom-left",
       });
