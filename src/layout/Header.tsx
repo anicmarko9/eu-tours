@@ -49,7 +49,7 @@ const Header = (): JSX.Element => {
       <header className="containerSpacing absolute top-0 z-10 flex h-16 w-full items-center py-0 text-header backdrop-blur-lg 2xl:px-32">
         <nav className="descriptionText flex w-full justify-between">
           <div className="flex w-4/5 items-center justify-start xl:w-1/4">
-            <a className="flex h-12 w-full items-center" href="/">
+            <Link className="flex h-12 w-full items-center" href="/">
               <Image
                 src="/logo.png"
                 alt="Logo"
@@ -60,7 +60,7 @@ const Header = (): JSX.Element => {
               <span className="titleText hoverEffect p-[10px] pr-0 text-secondary">
                 EU Tours
               </span>
-            </a>
+            </Link>
           </div>
           {windowWidth >= 1024 ? (
             <div className="flex w-3/4 items-center justify-between">
@@ -109,7 +109,7 @@ const Header = (): JSX.Element => {
                         void signOut({
                           callbackUrl:
                             process.env.NODE_ENV === "production"
-                              ? `https://${process.env.VERCEL_URL}`
+                              ? `https://${process.env.VERCEL_URL as string}`
                               : "http://localhost:3000",
                         })
                       }

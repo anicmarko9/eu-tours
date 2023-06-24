@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { getEmailUsername } from "src/helper/helper";
-import {
+import type {
   LiteralUnion,
   SignInAuthorizationParams,
   SignInOptions,
   SignOutParams,
 } from "next-auth/react/types";
-import { BuiltInProviderType } from "next-auth/providers";
+import type { BuiltInProviderType } from "next-auth/providers";
+import Link from "next/link";
 
 const BurgerMenu = ({
   toggleMenu,
@@ -68,7 +69,7 @@ const BurgerMenu = ({
     >
       <div className="absolute right-0 top-0 z-30 h-full w-full space-y-4 bg-bodyBg p-4 shadow-lg sm:w-3/5">
         <div className="titleText flex items-center justify-between text-secondary">
-          <a className="hoverEffect flex h-12 w-full items-center" href="/">
+          <Link className="hoverEffect flex h-12 w-full items-center" href="/">
             <Image
               src="/logo.png"
               alt="Logo"
@@ -79,7 +80,7 @@ const BurgerMenu = ({
             <span className="titleText hoverEffect p-[10px] pr-0 text-secondary hover:text-primary">
               EU Tours
             </span>
-          </a>
+          </Link>
           <IoClose
             onClick={toggleMenu}
             className="h-8 w-8 cursor-pointer rounded-full text-secondary transition-all duration-200 ease-in hover:bg-secondary hover:text-white"
@@ -87,18 +88,21 @@ const BurgerMenu = ({
         </div>
         <hr className="border-1 border-primary" />
         <div className="titleText flex w-full flex-col space-y-4">
-          <a className="hoverEffect hover:text-secondary" href="/about-us">
+          <Link className="hoverEffect hover:text-secondary" href="/about-us">
             Discover
-          </a>
-          <a className="hoverEffect hover:text-secondary" href="/bookings">
+          </Link>
+          <Link className="hoverEffect hover:text-secondary" href="/bookings">
             Services
-          </a>
-          <a className="hoverEffect hover:text-secondary" href="/weight-loss">
+          </Link>
+          <Link
+            className="hoverEffect hover:text-secondary"
+            href="/weight-loss"
+          >
             Community
-          </a>
-          <a className="hoverEffect hover:text-secondary" href="/stories">
+          </Link>
+          <Link className="hoverEffect hover:text-secondary" href="/stories">
             About Us
-          </a>
+          </Link>
         </div>
         <hr className="border-1 border-primary" />
         {user ? (
@@ -128,7 +132,7 @@ const BurgerMenu = ({
                 void signOut({
                   callbackUrl:
                     process.env.NODE_ENV === "production"
-                      ? `https://${process.env.VERCEL_URL}`
+                      ? `https://${process.env.VERCEL_URL as string}`
                       : "http://localhost:3000",
                 })
               }
