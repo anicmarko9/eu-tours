@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import HamburgerMenu from "src/components/HamburgerMenu";
 
-/* eslint-disable restrict-template-expressions */
-
 const Header = (): JSX.Element => {
   const { data: session, status } = useSession<boolean>();
   const loading: boolean = status === "loading";
