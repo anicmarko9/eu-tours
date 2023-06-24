@@ -48,7 +48,7 @@ const Header = (): JSX.Element => {
     <>
       <header className="containerSpacing absolute top-0 z-10 flex h-16 w-full items-center py-0 text-header backdrop-blur-lg 2xl:px-32">
         <nav className="descriptionText flex w-full justify-between">
-          <div className="flex w-4/5 items-center justify-start xl:w-1/4">
+          <div className="flex w-4/5 items-center justify-start lg:w-1/4">
             <Link className="flex h-12 w-full items-center" href="/">
               <Image
                 src="/logo.png"
