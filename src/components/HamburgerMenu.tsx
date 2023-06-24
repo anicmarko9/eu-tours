@@ -68,7 +68,18 @@ const BurgerMenu = ({
     >
       <div className="absolute right-0 top-0 z-30 h-full w-full space-y-4 bg-bodyBg p-4 shadow-lg sm:w-3/5">
         <div className="titleText flex items-center justify-between text-secondary">
-          <a href="/">Logo</a>
+          <a className="hoverEffect flex h-12 w-full items-center" href="/">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={100}
+              height={48}
+              className="hoverEffect h-full w-auto object-contain hover:opacity-70"
+            />
+            <span className="titleText hoverEffect p-[10px] pr-0 text-secondary hover:text-primary">
+              EU Tours
+            </span>
+          </a>
           <IoClose
             onClick={toggleMenu}
             className="h-8 w-8 cursor-pointer rounded-full text-secondary transition-all duration-200 ease-in hover:bg-secondary hover:text-white"
@@ -76,10 +87,18 @@ const BurgerMenu = ({
         </div>
         <hr className="border-1 border-primary" />
         <div className="titleText flex w-full flex-col space-y-4">
-          <a href="/about-us">Discover</a>
-          <a href="/bookings">Services</a>
-          <a href="/weight-loss">Community</a>
-          <a href="/stories">About Us</a>
+          <a className="hoverEffect hover:text-secondary" href="/about-us">
+            Discover
+          </a>
+          <a className="hoverEffect hover:text-secondary" href="/bookings">
+            Services
+          </a>
+          <a className="hoverEffect hover:text-secondary" href="/weight-loss">
+            Community
+          </a>
+          <a className="hoverEffect hover:text-secondary" href="/stories">
+            About Us
+          </a>
         </div>
         <hr className="border-1 border-primary" />
         {user ? (
@@ -91,11 +110,11 @@ const BurgerMenu = ({
                   alt="User Avatar"
                   width={48}
                   height={48}
-                  className="h-fit w-fit rounded-full"
+                  className="hoverEffect h-fit w-fit cursor-pointer rounded-full hover:opacity-70"
                 />
               )}
               {user.email && user.name && (
-                <p className="descriptionText flex h-12 flex-col justify-evenly">
+                <p className="hoverEffect descriptionText flex h-12 cursor-pointer flex-col justify-evenly hover:text-secondary">
                   <span className="break-words break-all font-bold">
                     {getEmailUsername(user.email)}
                   </span>
@@ -104,7 +123,7 @@ const BurgerMenu = ({
               )}
             </div>
             <button
-              className="gradientOrange h-12 w-[120px] rounded-lg border-2 border-primary px-4 font-bold text-white"
+              className="gradientOrangeButton h-12 w-[120px] rounded-lg border-2 border-primary px-4 font-bold text-white"
               onClick={() =>
                 void signOut({ callbackUrl: "http://localhost:3000" })
               }
@@ -115,7 +134,7 @@ const BurgerMenu = ({
         ) : (
           <div className="flex justify-end">
             <button
-              className="gradientOrange h-12 w-[120px] rounded-lg border-2 border-primary px-4 font-bold text-white"
+              className="gradientOrangeButton h-12 w-[120px] rounded-lg border-2 border-primary px-4 font-bold text-white"
               onClick={() => void signIn()}
             >
               Sign in

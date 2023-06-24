@@ -7,7 +7,7 @@ const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
   return (
     <div>
       <Head>
-        <title>EU - Tours</title>
+        <title>EU Tours</title>
       </Head>
       <Header />
       <main>{children}</main>

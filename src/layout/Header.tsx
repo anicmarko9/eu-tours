@@ -48,24 +48,33 @@ const Header = (): JSX.Element => {
     <>
       <header className="containerSpacing absolute top-0 z-10 flex h-16 w-full items-center py-0 text-header backdrop-blur-lg 2xl:px-32">
         <nav className="descriptionText flex w-full justify-between">
-          <div className="titleText flex h-12 w-1/5 items-center justify-start text-secondary">
-            <a href="#" className="">
-              Logo
+          <div className="flex w-4/5 items-center justify-start xl:w-1/4">
+            <a className="flex h-12 w-full items-center" href="/">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={100}
+                height={48}
+                className="hoverEffect h-full w-auto object-contain hover:opacity-70"
+              />
+              <span className="titleText hoverEffect p-[10px] pr-0 text-secondary">
+                EU Tours
+              </span>
             </a>
           </div>
           {windowWidth >= 1024 ? (
-            <div className="flex w-full items-center justify-between xl:w-4/5">
-              <ul className="flex w-2/3 items-center justify-between xl:w-2/3">
-                <Link className="p-2" href="#">
+            <div className="flex w-3/4 items-center justify-between">
+              <ul className="flex w-2/3 items-center justify-between">
+                <Link className="hoverEffect p-3" href="#">
                   <li>Discover</li>
                 </Link>
-                <Link className="p-2" href="#">
+                <Link className="hoverEffect p-3" href="#">
                   <li>Services</li>
                 </Link>
-                <Link className="p-2" href="#">
+                <Link className="hoverEffect p-3" href="#">
                   <li>Community</li>
                 </Link>
-                <Link className="p-2" href="#">
+                <Link className="hoverEffect p-3" href="#">
                   <li>About Us</li>
                 </Link>
               </ul>
@@ -75,7 +84,7 @@ const Header = (): JSX.Element => {
                 ) : !session ? (
                   <div className="flex justify-end">
                     <button
-                      className="gradientOrange h-12 rounded-lg border-2 border-primary px-4 font-bold text-white"
+                      className="gradientOrangeButton h-12 rounded-lg border-2 border-primary px-4 font-bold text-white"
                       onClick={() => void signIn()}
                     >
                       Sign in
@@ -83,7 +92,7 @@ const Header = (): JSX.Element => {
                   </div>
                 ) : (
                   <div className="flex items-center justify-between">
-                    <div className="flex space-x-2">
+                    <div className="hoverEffect flex cursor-pointer space-x-2 hover:opacity-70">
                       {session.user?.image && (
                         <Image
                           src={session.user.image}
@@ -95,7 +104,7 @@ const Header = (): JSX.Element => {
                       )}
                     </div>
                     <button
-                      className="gradientOrange h-12 rounded-lg border-2 border-primary px-4 font-bold text-white"
+                      className="gradientOrangeButton h-12 rounded-lg border-2 border-primary px-4 font-bold text-white"
                       onClick={() =>
                         void signOut({ callbackUrl: "http://localhost:3000" })
                       }
@@ -108,7 +117,7 @@ const Header = (): JSX.Element => {
             </div>
           ) : (
             <RxHamburgerMenu
-              className="h-8 w-8 cursor-pointer text-secondary hover:opacity-60"
+              className="hoverEffect h-8 w-8 cursor-pointer self-center text-secondary"
               onClick={toggleMenu}
             />
           )}
