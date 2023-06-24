@@ -125,7 +125,12 @@ const BurgerMenu = ({
             <button
               className="gradientOrangeButton h-12 w-[120px] rounded-lg border-2 border-primary px-4 font-bold text-white"
               onClick={() =>
-                void signOut({ callbackUrl: "http://localhost:3000" })
+                void signOut({
+                  callbackUrl:
+                    process.env.NODE_ENV === "production"
+                      ? `https://${process.env.VERCEL_URL}`
+                      : "http://localhost:3000",
+                })
               }
             >
               Sign out
