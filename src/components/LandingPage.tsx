@@ -40,30 +40,26 @@ const LandingPage = (): JSX.Element => {
             <div className="flex w-fit flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
               <div className="flex items-center space-x-4 sm:w-fit">
                 <SlLocationPin className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
-                <div>
+                <div className="hoverEffect cursor-pointer">
                   <p className="space-x-2">
                     <span>Location</span>
-                    <span>
-                      <IoIosArrowDown className="inline text-secondary" />
-                    </span>
+                    <IoIosArrowDown className="hoverEffect inline text-secondary" />
                   </p>
                   <p className="text-white">Zlatibor, Serbia</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4 sm:w-fit">
                 <MdOutlineCalendarMonth className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
-                <div>
+                <div className="hoverEffect cursor-pointer">
                   <p className="space-x-2">
                     <span>Date</span>
-                    <span>
-                      <IoIosArrowDown className="inline text-secondary" />
-                    </span>
+                    <IoIosArrowDown className="hoverEffect inline text-secondary" />
                   </p>
                   <p className="text-white">16 September 2023</p>
                 </div>
               </div>
             </div>
-            <button className="gradientOrange w-fit self-center rounded-lg border-2 border-primary px-4 py-2 font-semibold tracking-wider text-white sm:self-auto sm:py-0 xl:text-base 2xl:text-lg">
+            <button className="gradientOrangeButton w-fit self-center rounded-lg border-2 border-primary px-4 py-2 font-semibold tracking-wider text-white sm:self-auto sm:py-0 xl:text-base 2xl:text-lg">
               Search
             </button>
           </div>
