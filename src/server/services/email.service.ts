@@ -2,6 +2,8 @@ import type { User } from "@prisma/client";
 import nodemailer from "nodemailer";
 import { prisma } from "./../db";
 
+/* eslint-disable restrict-template-expressions */
+
 export const sendVerificationEmail = async (user: User): Promise<void> => {
   try {
     const transport = nodemailer.createTransport({
