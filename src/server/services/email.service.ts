@@ -17,8 +17,8 @@ export const sendVerificationEmail = async (user: User): Promise<void> => {
       to: user.email,
       subject: "Verify your email address",
       text: `Please click the following link to verify your email address: ${
-        process.env.NEXTAUTH_URL
-      }/auth/verify-email?id=${user.id as string}`,
+        process.env.NEXTAUTH_URL as string
+      }/auth/verify-email?id=${user.id}`,
     };
     await transport.sendMail(message);
   } catch (err) {
