@@ -106,7 +106,12 @@ const Header = (): JSX.Element => {
                     <button
                       className="gradientOrangeButton h-12 rounded-lg border-2 border-primary px-4 font-bold text-white"
                       onClick={() =>
-                        void signOut({ callbackUrl: "http://localhost:3000" })
+                        void signOut({
+                          callbackUrl:
+                            process.env.NODE_ENV === "production"
+                              ? `https://${process.env.VERCEL_URL}`
+                              : "http://localhost:3000",
+                        })
                       }
                     >
                       Sign out
