@@ -109,7 +109,7 @@ const Header = (): JSX.Element => {
                         void signOut({
                           callbackUrl:
                             process.env.NODE_ENV === "production"
-                              ? `https://${process.env.VERCEL_URL}`
+                              ? `https://${process.env.VERCEL_URL as string}`
                               : "http://localhost:3000",
                         })
                       }
