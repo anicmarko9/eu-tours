@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 @layer components {
-    .descriptionText {
-        @apply text-xs sm:text-sm md:flex-nowrap lg:text-base
-    }
-    .titleText {
-        @apply text-base sm:text-lg lg:text-xl font-bold uppercase tracking-wider
-    }
-    .logoText {
-        @apply text-sm sm:text-base lg:text-lg font-bold uppercase tracking-wider
-    }
-    .containerSpacing {
-        @apply p-4 2xl:px-32 2xl:py-16
-    }
-    .gradientOrangeButton {
-        @apply bg-gradient-to-r from-darkerOrange to-lighterOrange hover:border-secondary hover:bg-none hover:bg-white font-bold hover:text-secondary transition-all duration-200 ease-in
-    }
-    .hoverEffect {
-        @apply transition-all duration-200 ease-in hover:text-white
-    }
+  .descriptionText {
+    @apply text-xs sm:text-sm md:flex-nowrap lg:text-base;
+  }
+  .titleText {
+    @apply text-base font-bold uppercase tracking-wider sm:text-lg lg:text-xl;
+  }
+  .logoText {
+    @apply text-sm font-bold uppercase tracking-wider sm:text-base lg:text-lg;
+  }
+  .containerSpacing {
+    @apply p-4 2xl:px-32 2xl:py-16;
+  }
+  .gradientOrangeButton {
+    @apply bg-white bg-gradient-to-r from-darkerOrange to-lighterOrange font-bold transition-all duration-200 ease-in hover:border-secondary hover:bg-white hover:bg-none hover:text-secondary;
+  }
+  .hoverEffect {
+    @apply transition-all duration-200 ease-in hover:text-white;
+  }
 }
