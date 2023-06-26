@@ -14,8 +14,8 @@ const FooterLinkGroup = ({
       </h5>
       <ul className="descriptionText space-y-4">
         {links.map(
-          ({ link, text }): JSX.Element => (
-            <li key={link}>
+          ({ link, text }, index: number): JSX.Element => (
+            <li key={`${link}-${index}`}>
               <Link className="hoverEffect hover:text-secondary" href={link}>
                 {text}
               </Link>

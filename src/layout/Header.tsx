@@ -50,13 +50,9 @@ const Header = (): JSX.Element => {
         <nav className="descriptionText flex w-full justify-between">
           <div className="flex w-4/5 items-center justify-start lg:w-1/4">
             <Link className="flex h-12 w-full items-center" href="/">
-              <Image
-                src="/logo.png"
-                alt="Logo"
-                width={100}
-                height={48}
-                className="hoverEffect h-full w-auto object-contain hover:opacity-70"
-              />
+              <div className="hoverEffect h-full w-[79px] hover:opacity-70">
+                <Image src="/brand.png" alt="Logo" width={79} height={48} />
+              </div>
               <span className="titleText hoverEffect p-[10px] pr-0 text-secondary">
                 EU Tours
               </span>
@@ -84,7 +80,7 @@ const Header = (): JSX.Element => {
                 ) : !session ? (
                   <div className="flex justify-end">
                     <button
-                      className="gradientOrangeButton h-12 rounded-lg border-2 border-primary px-4 font-bold text-white"
+                      className="gradientOrangeButton h-12 rounded-lg border-2 border-header px-4 font-bold text-white"
                       onClick={() => void signIn()}
                     >
                       Sign in
@@ -104,7 +100,7 @@ const Header = (): JSX.Element => {
                       )}
                     </div>
                     <button
-                      className="gradientOrangeButton h-12 rounded-lg border-2 border-primary px-4 font-bold text-white"
+                      className="gradientOrangeButton h-12 rounded-lg border-2 border-header px-4 font-bold text-white"
                       onClick={() =>
                         void signOut({
                           callbackUrl:

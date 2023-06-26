@@ -4,12 +4,12 @@ import VignetteScreen from "src/components/VignetteScreen";
 const ToursSlideshow = (): JSX.Element => {
   return (
     <div className="relative h-screen w-full">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 h-full w-full">
         <Image
           fill
           src="/test.png"
           alt="Background Image"
-          className="h-full w-full object-cover"
+          className="object-cover"
         />
       </div>
       <VignetteScreen />

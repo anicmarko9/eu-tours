@@ -1,6 +1,7 @@
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { api } from "../utils/api";
@@ -15,6 +16,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
       <ToastContainer toastClassName="font-montserrat" />
       <main>
         <Component {...pageProps} />
+        <Analytics />
       </main>
     </SessionProvider>
   );

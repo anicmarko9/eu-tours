@@ -22,13 +22,13 @@ const LandingPage = (): JSX.Element => {
             <span className="text-white">Live your</span>
             <span className="text-secondary">adventure</span>
           </p>
-          <div className="flex h-[40%] w-full items-center justify-end lg:hidden lg:h-full lg:w-5/12">
+          <div className="flex h-[250px] w-full justify-center lg:hidden">
             <Image
               src="/journey.png"
               alt="Landing Page Image"
-              width={400}
-              height={400}
-              className="h-full w-full object-contain lg:h-auto lg:w-auto"
+              width={250}
+              height={250}
+              priority
             />
           </div>
           <p className="w-full text-xs leading-relaxed sm:w-1/2 sm:text-sm md:flex-nowrap md:text-base lg:py-4 xl:text-lg">
@@ -59,18 +59,18 @@ const LandingPage = (): JSX.Element => {
                 </div>
               </div>
             </div>
-            <button className="gradientOrangeButton w-fit self-center rounded-lg border-2 border-primary px-4 py-2 font-semibold tracking-wider text-white sm:self-auto sm:py-0 xl:text-base 2xl:text-lg">
+            <button className="gradientOrangeButton w-fit self-center rounded-lg border-2 border-header px-4 py-2 font-semibold tracking-wider text-white sm:self-auto sm:py-0 xl:text-base 2xl:text-lg">
               Search
             </button>
           </div>
         </div>
-        <div className="flex h-[40%] w-full items-center justify-end max-[1023.9px]:hidden lg:h-full lg:w-5/12">
+        <div className="flex h-full w-5/12 items-center justify-end max-[1023.9px]:hidden">
           <Image
             src="/journey.png"
             alt="Landing Page Image"
-            width={400}
-            height={400}
-            className="h-full w-full object-contain"
+            width={500}
+            height={500}
+            priority
           />
         </div>
       </div>
