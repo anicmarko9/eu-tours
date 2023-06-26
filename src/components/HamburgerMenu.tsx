@@ -70,13 +70,9 @@ const BurgerMenu = ({
       <div className="absolute right-0 top-0 z-30 h-full w-full space-y-4 bg-bodyBg p-4 shadow-lg sm:w-3/5">
         <div className="titleText flex items-center justify-between text-secondary">
           <Link className="hoverEffect flex h-12 w-full items-center" href="/">
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={100}
-              height={48}
-              className="hoverEffect h-full w-auto object-contain hover:opacity-70"
-            />
+            <div className="hoverEffect h-full w-[79px] hover:opacity-70">
+              <Image src="/brand.png" alt="Logo" width={79} height={48} />
+            </div>
             <span className="titleText hoverEffect p-[10px] pr-0 text-secondary hover:text-primary">
               EU Tours
             </span>
