@@ -1,8 +1,8 @@
-import type { User } from "@prisma/client";
+import type { user } from "@prisma/client";
 import nodemailer from "nodemailer";
 import { prisma } from "./../db";
 
-export const sendVerificationEmail = async (user: User): Promise<void> => {
+export const sendVerificationEmail = async (user: user): Promise<void> => {
   try {
     const transport = nodemailer.createTransport({
       host: process.env.EMAIL_HOST as string,
@@ -28,7 +28,7 @@ export const sendVerificationEmail = async (user: User): Promise<void> => {
 
 export const verifyEmail = async (id: string): Promise<void> => {
   try {
-    const user = await prisma.user.update({
+    const user: user = await prisma.user.update({
       where: {
         id,
       },
