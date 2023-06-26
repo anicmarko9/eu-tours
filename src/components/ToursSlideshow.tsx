@@ -10,6 +10,9 @@ const ToursSlideshow = (): JSX.Element => {
           src="/test.png"
           alt="Background Image"
           className="object-cover"
+          placeholder="blur"
+          blurDataURL={"/test.png"}
+          loading="eager"
         />
       </div>
       <VignetteScreen />
@@ -32,6 +35,9 @@ const ToursSlideshow = (): JSX.Element => {
                   src="/test-2.png"
                   alt="Background image"
                   className="h-full w-full rounded-lg"
+                  placeholder="blur"
+                  blurDataURL={"/test-2.png"}
+                  loading="eager"
                 />
               </div>
             </div>
@@ -51,6 +57,9 @@ const ToursSlideshow = (): JSX.Element => {
                   src="/test-2.png"
                   alt="Background image"
                   className="h-full w-full rounded-lg"
+                  placeholder="blur"
+                  blurDataURL={"/test-2.png"}
+                  loading="eager"
                 />
               </div>
             </div>

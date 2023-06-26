@@ -13,6 +13,9 @@ const LandingPage = (): JSX.Element => {
           src="/leaves-bg.jpg"
           alt="Background Image"
           className="h-full w-full object-cover"
+          placeholder="blur"
+          blurDataURL={"/leaves-bg.jpg"}
+          loading="eager"
         />
       </div>
       <VignetteScreen />
@@ -28,7 +31,9 @@ const LandingPage = (): JSX.Element => {
               alt="Landing Page Image"
               width={250}
               height={250}
-              priority
+              placeholder="blur"
+              blurDataURL={"/journey.png"}
+              loading="eager"
             />
           </div>
           <p className="w-full text-xs leading-relaxed sm:w-1/2 sm:text-sm md:flex-nowrap md:text-base lg:py-4 xl:text-lg">
@@ -70,7 +75,9 @@ const LandingPage = (): JSX.Element => {
             alt="Landing Page Image"
             width={500}
             height={500}
-            priority
+            placeholder="blur"
+            blurDataURL={"/journey.png"}
+            loading="eager"
           />
         </div>
       </div>

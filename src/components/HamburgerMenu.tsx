@@ -71,7 +71,15 @@ const BurgerMenu = ({
         <div className="titleText flex items-center justify-between text-secondary">
           <Link className="hoverEffect flex h-12 w-full items-center" href="/">
             <div className="hoverEffect h-full w-[79px] hover:opacity-70">
-              <Image src="/brand.png" alt="Logo" width={79} height={48} />
+              <Image
+                src="/brand.png"
+                alt="Logo"
+                width={79}
+                height={48}
+                placeholder="blur"
+                blurDataURL={"/brand.png"}
+                loading="eager"
+              />
             </div>
             <span className="titleText hoverEffect p-[10px] pr-0 text-secondary hover:text-primary">
               EU Tours
@@ -111,6 +119,9 @@ const BurgerMenu = ({
                   width={48}
                   height={48}
                   className="hoverEffect h-fit w-fit cursor-pointer rounded-full hover:opacity-70"
+                  placeholder="blur"
+                  blurDataURL={user.image}
+                  loading="eager"
                 />
               )}
               {user.email && user.name && (
