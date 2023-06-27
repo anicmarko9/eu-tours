@@ -1,6 +1,5 @@
-import Link from "next/link";
-import FooterLinkGroup from "../components/FooterLinkGroup";
-import Image from "next/image";
+import FooterLinkGroup from "../components/links/FooterLinkGroup";
+import Logo from "src/components/images/Logo";
 
 const Footer = (): JSX.Element => {
   return (
@@ -8,25 +7,10 @@ const Footer = (): JSX.Element => {
       <div className="flex flex-col space-y-4 lg:space-y-8 xl:space-y-12">
         <div className="flex flex-col justify-between lg:flex-row">
           <div className="w-full space-y-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
-            <Link className="flex h-12 w-full items-center" href="/">
-              <div className="hoverEffect h-full w-[79px] hover:opacity-70">
-                <Image
-                  src="/brand.png"
-                  alt="Logo"
-                  width={79}
-                  height={48}
-                  placeholder="blur"
-                  blurDataURL={"/brand.png"}
-                  loading="eager"
-                />
-              </div>
-              <span className="titleText hoverEffect p-[10px] pr-0 text-secondary hover:text-primary">
-                EU Tours
-              </span>
-            </Link>
+            <Logo />
             <p className="descriptionText lg:w-4/5">
-              Our mission is to make everyone able to feel the attachment back
-              to nature by providing an unforgettable experience.
+              Our mission is to create opportunities for everyone to rediscover
+              the joys of European travel and tourism.
             </p>
           </div>
           <hr className="mt-4 w-full border border-black border-opacity-20 lg:hidden" />

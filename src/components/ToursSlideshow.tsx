@@ -1,20 +1,11 @@
 import Image from "next/image";
-import VignetteScreen from "src/components/VignetteScreen";
+import VignetteScreen from "./images/VignetteScreen";
+import BgImage from "./images/BgImage";
 
 const ToursSlideshow = (): JSX.Element => {
   return (
     <div className="relative h-screen w-full">
-      <div className="absolute inset-0 h-full w-full">
-        <Image
-          fill
-          src="/test.png"
-          alt="Background Image"
-          className="object-cover"
-          placeholder="blur"
-          blurDataURL={"/test.png"}
-          loading="eager"
-        />
-      </div>
+      <BgImage src="/images/test.png" />
       <VignetteScreen />
       <div className="containerSpacing relative flex h-screen w-full space-x-16 text-white">
         <div className="flex h-full w-1/2 flex-col justify-center">
@@ -28,15 +19,15 @@ const ToursSlideshow = (): JSX.Element => {
                 <span>*</span>
                 <span>*</span>
               </p>
-              <div className="h-3/4">
+              <div className="h-3/4 w-full">
                 <Image
-                  width={2000}
-                  height={2000}
-                  src="/test-2.png"
+                  width={250}
+                  height={400}
+                  src="/images/test-2.png"
                   alt="Background image"
-                  className="h-full w-full rounded-lg"
+                  className="object-fit h-full rounded-lg"
                   placeholder="blur"
-                  blurDataURL={"/test-2.png"}
+                  blurDataURL={"/images/test-2.png"}
                   loading="eager"
                 />
               </div>
@@ -50,15 +41,15 @@ const ToursSlideshow = (): JSX.Element => {
                 <span>*</span>
                 <span>*</span>
               </p>
-              <div className="h-3/4">
+              <div className="h-3/4 w-full">
                 <Image
-                  width={2000}
-                  height={2000}
-                  src="/test-2.png"
+                  width={250}
+                  height={400}
+                  src="/images/test-2.png"
                   alt="Background image"
-                  className="h-full w-full rounded-lg"
+                  className="object-fit h-full rounded-lg"
                   placeholder="blur"
-                  blurDataURL={"/test-2.png"}
+                  blurDataURL={"/images/test-2.png"}
                   loading="eager"
                 />
               </div>
