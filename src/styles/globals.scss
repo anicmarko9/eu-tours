@@ -21,4 +21,10 @@
   .hoverEffect {
     @apply transition-all duration-200 ease-in hover:text-white;
   }
+  .closeBtn {
+    @apply h-8 w-8 cursor-pointer rounded-full text-secondary transition-all duration-200 ease-in hover:bg-secondary hover:text-white
+  }
+  .burgerMenu {
+    @apply hoverEffect h-8 w-8 cursor-pointer self-center text-secondary
+  }
 }

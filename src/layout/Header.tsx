@@ -1,9 +1,12 @@
-import Link from "next/link";
-import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import HamburgerMenu from "src/components/HamburgerMenu";
+import HamburgerMenu from "src/components/tools/HamburgerMenu";
+import Logo from "src/components/images/Logo";
+import UserAvatar from "src/components/images/UserAvatar";
+import { AuthType } from "src/types/types";
+import AuthBtn from "src/components/tools/AuthBtn";
+import HeaderLinkGroup from "src/components/links/HeaderLinkGroup";
 
 const Header = (): JSX.Element => {
   const { data: session, status } = useSession<boolean>();
@@ -29,14 +32,11 @@ const Header = (): JSX.Element => {
     if (typeof window !== "undefined") {
       // Access the window object and set the initial window width
       setWindowWidth(window.innerWidth);
-
       // Add an event listener to update the window width on resize
       const handleResize = () => {
         setWindowWidth(window.innerWidth);
       };
-
       window.addEventListener("resize", handleResize);
-
       // Clean up the event listener on component unmount
       return () => {
         window.removeEventListener("resize", handleResize);
@@ -49,86 +49,35 @@ const Header = (): JSX.Element => {
       <header className="containerSpacing absolute top-0 z-10 flex h-16 w-full items-center py-0 text-header backdrop-blur-lg 2xl:px-32">
         <nav className="descriptionText flex w-full justify-between">
           <div className="flex w-4/5 items-center justify-start lg:w-1/4">
-            <Link className="flex h-12 w-full items-center" href="/">
-              <div className="hoverEffect h-full w-[79px] hover:opacity-70">
-                <Image
-                  src="/brand.png"
-                  alt="Logo"
-                  width={79}
-                  height={48}
-                  placeholder="blur"
-                  blurDataURL={"/brand.png"}
-                  loading="eager"
-                />
-              </div>
-              <span className="titleText hoverEffect p-[10px] pr-0 text-secondary">
-                EU Tours
-              </span>
-            </Link>
+            <Logo whiteHover={true} />
           </div>
           {windowWidth >= 1024 ? (
             <div className="flex w-3/4 items-center justify-between">
-              <ul className="flex w-2/3 items-center justify-between">
-                <Link className="hoverEffect p-3" href="#">
-                  <li>Discover</li>
-                </Link>
-                <Link className="hoverEffect p-3" href="#">
-                  <li>Services</li>
-                </Link>
-                <Link className="hoverEffect p-3" href="#">
-                  <li>Community</li>
-                </Link>
-                <Link className="hoverEffect p-3" href="#">
-                  <li>About Us</li>
-                </Link>
-              </ul>
+              <HeaderLinkGroup
+                links={[
+                  { link: "/about-us", text: "Discover" },
+                  { link: "/bookings", text: "Services" },
+                  { link: "/community", text: "Community" },
+                  { link: "/about", text: "About Us" },
+                ]}
+              />
               <div className="w-[180px]">
                 {loading ? (
                   <div className="flex justify-end">Loading...</div>
                 ) : !session ? (
                   <div className="flex justify-end">
-                    <button
-                      className="gradientOrangeButton h-12 rounded-lg border-2 border-header px-4 font-bold text-white"
-                      onClick={() => void signIn()}
-                    >
-                      Sign in
-                    </button>
+                    <AuthBtn authType={AuthType.SignIn} />
                   </div>
                 ) : (
                   <div className="flex items-center justify-between">
-                    <div className="hoverEffect flex cursor-pointer space-x-2 hover:opacity-70">
-                      {session.user?.image && (
-                        <Image
-                          src={session.user.image}
-                          alt="User Avatar"
-                          width={48}
-                          height={48}
-                          className="h-fit w-fit rounded-full"
-                        />
-                      )}
-                    </div>
-                    <button
-                      className="gradientOrangeButton h-12 rounded-lg border-2 border-header px-4 font-bold text-white"
-                      onClick={() =>
-                        void signOut({
-                          callbackUrl:
-                            process.env.NODE_ENV === "production"
-                              ? `https://${process.env.VERCEL_URL as string}`
-                              : "http://localhost:3000",
-                        })
-                      }
-                    >
-                      Sign out
-                    </button>
+                    <UserAvatar session={session} />
+                    <AuthBtn authType={AuthType.SignOut} />
                   </div>
                 )}
               </div>
             </div>
           ) : (
-            <RxHamburgerMenu
-              className="hoverEffect h-8 w-8 cursor-pointer self-center text-secondary"
-              onClick={toggleMenu}
-            />
+            <RxHamburgerMenu className="burgerMenu" onClick={toggleMenu} />
           )}
         </nav>
       </header>
@@ -136,7 +85,7 @@ const Header = (): JSX.Element => {
         toggleMenu={toggleMenu}
         isMenuOpen={isMenuOpen}
         isMenuOpenLate={isMenuOpenLate}
-        user={session?.user}
+        session={session}
         signOut={signOut}
         signIn={signIn}
       />
