@@ -1,15 +1,15 @@
 import Image from "next/image";
-const SlidingTour = (): JSX.Element => {
+const SlidingTour = ({ src }: { src: string }): JSX.Element => {
   return (
-    <div className="h-3/4 w-full">
+    <div className="rounded-lg">
       <Image
         width={250}
         height={400}
-        src="/images/test-2.png"
+        src={src}
         alt="Background image"
-        className="object-fit h-full rounded-lg"
+        className="rounded-lg"
         placeholder="blur"
-        blurDataURL={"/images/test-2.png"}
+        blurDataURL={src}
         loading="eager"
       />
     </div>
