@@ -8,8 +8,8 @@ const LandingPage = (): JSX.Element => {
     <div className="relative h-screen w-full">
       <BgImage src="/images/leaves-bg.jpg" />
       <VignetteScreen />
-      <div className="containerSpacing relative flex h-screen w-full text-header sm:flex-wrap lg:flex-nowrap">
-        <div className="flex h-full w-full flex-col justify-evenly pt-16 lg:h-full lg:w-7/12 lg:justify-center">
+      <div className="containerSpacing relative flex h-full w-full text-header sm:flex-wrap lg:flex-nowrap">
+        <div className="flex h-full w-full flex-col justify-evenly pt-16 lg:w-7/12 lg:justify-center 2xl:w-1/2">
           <p className="flex flex-col self-center text-center text-4xl font-bold uppercase tracking-wider sm:self-start sm:text-start sm:text-6xl lg:text-7xl xl:text-8xl">
             <span className="text-white">Live your</span>
             <span className="text-secondary">adventure</span>
