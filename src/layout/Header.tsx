@@ -5,7 +5,7 @@ import HamburgerMenu from "src/components/tools/HamburgerMenu";
 import Logo from "src/components/images/Logo";
 import UserAvatar from "src/components/images/UserAvatar";
 import { AuthType } from "src/types/types";
-import AuthBtn from "src/components/tools/AuthBtn";
+import PrimaryBtn from "src/components/tools/PrimaryBtn";
 import HeaderLinkGroup from "src/components/links/HeaderLinkGroup";
 
 const Header = (): JSX.Element => {
@@ -66,12 +66,12 @@ const Header = (): JSX.Element => {
                   <div className="flex justify-end">Loading...</div>
                 ) : !session ? (
                   <div className="flex justify-end">
-                    <AuthBtn authType={AuthType.SignIn} />
+                    <PrimaryBtn authType={AuthType.SignIn} />
                   </div>
                 ) : (
                   <div className="flex items-center justify-between">
                     <UserAvatar session={session} />
-                    <AuthBtn authType={AuthType.SignOut} />
+                    <PrimaryBtn authType={AuthType.SignOut} />
                   </div>
                 )}
               </div>

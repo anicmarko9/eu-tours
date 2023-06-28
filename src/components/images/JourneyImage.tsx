@@ -14,7 +14,7 @@ const JourneyImage = ({ isMobile }: { isMobile: boolean }): JSX.Element => {
       />
     </div>
   ) : (
-    <div className="flex h-full w-5/12 items-center justify-end max-[1023.9px]:hidden">
+    <div className="flex h-full w-5/12 items-center justify-end max-[1023.9px]:hidden 2xl:w-1/2">
       <Image
         src="/images/journey.png"
         alt="Landing Page Image"
@@ -23,6 +23,7 @@ const JourneyImage = ({ isMobile }: { isMobile: boolean }): JSX.Element => {
         placeholder="blur"
         blurDataURL={"/images/journey.png"}
         loading="eager"
+        className="w-full"
       />
     </div>
   );

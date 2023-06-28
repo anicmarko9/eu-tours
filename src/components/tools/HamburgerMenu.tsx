@@ -13,7 +13,7 @@ import HeaderLinkGroup from "../links/HeaderLinkGroup";
 import type { Session } from "next-auth";
 import UserAvatar from "../images/UserAvatar";
 import { AuthType } from "src/types/types";
-import AuthBtn from "./AuthBtn";
+import PrimaryBtn from "./PrimaryBtn";
 
 const BurgerMenu = ({
   toggleMenu,
@@ -92,11 +92,11 @@ const BurgerMenu = ({
                 </p>
               )}
             </div>
-            <AuthBtn authType={AuthType.SignOut} isHamburger={true} />
+            <PrimaryBtn authType={AuthType.SignOut} />
           </div>
         ) : (
           <div className="flex justify-end">
-            <AuthBtn authType={AuthType.SignIn} isHamburger={true} />
+            <PrimaryBtn authType={AuthType.SignIn} />
           </div>
         )}
       </div>
