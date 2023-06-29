@@ -11,7 +11,7 @@ const Logo = ({ whiteHover }: { whiteHover?: boolean }): JSX.Element => {
           width={79}
           height={48}
           placeholder="blur"
-          blurDataURL={"/images/brand.png"}
+          blurDataURL="/images/brand.png"
           loading="eager"
         />
       </div>
