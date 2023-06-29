@@ -27,4 +27,22 @@
   .burgerMenu {
     @apply hoverEffect h-8 w-8 cursor-pointer self-center text-secondary
   }
+  .tourText {
+    @apply titleText max-w-[250px] text-center capitalize lg:text-end min-[1750px]:max-w-[350px]
+  }
+  .four {
+    @apply absolute transform duration-500 ease-in-out max-md:hidden md:left-0 md:top-[30.75%] md:w-[50%] md:-translate-x-[45%] lg:left-auto lg:top-auto lg:hidden lg:h-auto lg:w-[20%] lg:translate-x-[40%] xl:w-1/2 xl:translate-x-[10%] 2xl:w-1/2 2xl:translate-x-[5%]
+  }
+  .three {
+    @apply absolute left-0 top-[30.75%] w-[50%] -translate-x-[60%] transform duration-500 ease-in-out min-[520px]:-translate-x-[55%] sm:-translate-x-[40%] md:left-auto md:top-auto md:w-[50%] md:translate-x-[26%] lg:w-[20%] lg:-translate-x-[70%] xl:w-1/2 xl:-translate-x-[33%] 2xl:w-1/2 2xl:-translate-x-[33%] min-[1750px]:-translate-x-[43%]
+  }
+  .two {
+    @apply absolute w-[50%] translate-x-[42.5%] transform duration-500 ease-in-out min-[520px]:translate-x-[45%] sm:translate-x-[55.5%] md:translate-x-[101%] lg:h-auto lg:w-[20%] lg:translate-x-[40%] xl:w-1/2 xl:translate-x-[10%] 2xl:w-1/2 2xl:translate-x-[5%] min-[1750px]:translate-x-[0%]
+  }
+  .one {
+    @apply absolute right-0 top-[30.75%] w-[50%] translate-x-[62.5%] transform duration-500 ease-in-out min-[520px]:translate-x-[55%] md:translate-x-[80%] lg:right-auto lg:top-auto lg:w-[20%] lg:translate-x-[150%] xl:w-1/2 xl:translate-x-[53%] 2xl:w-1/2 2xl:translate-x-[43%]
+  }
+  .arrowContainer {
+    @apply flex cursor-pointer items-center justify-center rounded-lg border-2 border-primary bg-secondary p-[2px] text-xl text-white shadow-2xl transition-all duration-200 ease-in hover:bg-white hover:text-secondary lg:text-2xl
+  }
 }
