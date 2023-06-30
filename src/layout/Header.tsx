@@ -59,7 +59,7 @@ const Header = (): JSX.Element => {
                   { link: "/about", text: "About Us" },
                 ]}
               />
-              <div className="w-[180px]">
+              <section className="w-[180px]">
                 {loading ? (
                   <small className="flex justify-end">Loading...</small>
                 ) : !session ? (
@@ -72,7 +72,7 @@ const Header = (): JSX.Element => {
                     <PrimaryBtn authType={AuthType.SignOut} />
                   </div>
                 )}
-              </div>
+              </section>
             </div>
           ) : (
             <RxHamburgerMenu className="burgerMenu" onClick={toggleMenu} />

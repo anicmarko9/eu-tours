@@ -51,8 +51,7 @@ const BurgerMenu = ({
     }
   }, []);
 
-  if (!isMenuOpenLate || windowWidth >= 1024)
-    return <div className="hidden"></div>;
+  if (!isMenuOpenLate || windowWidth >= 1024) return <></>;
 
   return (
     <div
