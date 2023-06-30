@@ -5,13 +5,14 @@ For backend I've used Node.js with Express.js, where I've implemented TypeSafe A
 For infrastructure I've used Docker and Kubernetes.
 
 This App has:
-* Responsive UI
-* Smooth transitions, animations and overall UX
-* User authentication with Google and GitHub
-* User settings -> Upload different Image, add nickname, delete one or both Accounts.
-* Lead Guide has the ability to add Tours with frontend UI, which are later added to database.
-* One admin, me. Multiple Lead Guides who can delete only their Tours.
-* Payment service with Stripe. You can book appropriate tour, and you will receive receipt via email.
-* Email service with SendGrid for production, and MailTrap for development.
-* Unit Testing, end-to-end Testing.
-* Dockerized Image.
+
+- Responsive UI
+- Smooth transitions, animations and overall UX
+- User authentication with Google and GitHub
+- User settings -> Upload different Image, add nickname, delete one or both Accounts.
+- Lead Guide has the ability to add Tours with frontend UI, which are later added to database.
+- One admin, me. Multiple Lead Guides who can delete only their Tours.
+- Payment service with Stripe. You can book appropriate tour, and you will receive receipt via email.
+- Email service with SendGrid for production, and MailTrap for development.
+- Unit Testing, end-to-end Testing.
+- Dockerized Image.

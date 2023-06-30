@@ -48,9 +48,7 @@ const Header = (): JSX.Element => {
     <>
       <header className="containerSpacing absolute top-0 z-10 flex h-16 w-full items-center py-0 text-header backdrop-blur-lg 2xl:px-32">
         <nav className="descriptionText flex w-full justify-between">
-          <div className="flex w-4/5 items-center justify-start lg:w-1/4">
-            <Logo whiteHover={true} />
-          </div>
+          <Logo whiteHover={true} />
           {windowWidth >= 1024 ? (
             <div className="flex w-3/4 items-center justify-between">
               <HeaderLinkGroup
@@ -63,7 +61,7 @@ const Header = (): JSX.Element => {
               />
               <div className="w-[180px]">
                 {loading ? (
-                  <div className="flex justify-end">Loading...</div>
+                  <small className="flex justify-end">Loading...</small>
                 ) : !session ? (
                   <div className="flex justify-end">
                     <PrimaryBtn authType={AuthType.SignIn} />

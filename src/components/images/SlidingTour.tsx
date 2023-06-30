@@ -1,7 +1,7 @@
 import Image from "next/image";
 const SlidingTour = ({ src }: { src: string }): JSX.Element => {
   return (
-    <div className="rounded-lg">
+    <figure className="rounded-lg">
       <Image
         width={250}
         height={400}
@@ -12,7 +12,7 @@ const SlidingTour = ({ src }: { src: string }): JSX.Element => {
         blurDataURL={src}
         loading="eager"
       />
-    </div>
+    </figure>
   );
 };
 

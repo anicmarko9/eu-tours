@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const BgImage = ({ src }: { src: string }): JSX.Element => {
   return (
-    <div className="absolute inset-0 h-full w-full">
+    <figure className="absolute inset-0 h-full w-full">
       <Image
         fill
         src={src}
@@ -12,7 +12,7 @@ const BgImage = ({ src }: { src: string }): JSX.Element => {
         blurDataURL={src}
         loading="eager"
       />
-    </div>
+    </figure>
   );
 };
 

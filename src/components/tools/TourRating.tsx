@@ -22,9 +22,9 @@ const TourRating = ({ rating }: { rating: number }): JSX.Element => {
   }
 
   return (
-    <p className="descriptionText h-7 max-w-[250px] text-center lg:text-end min-[1750px]:max-w-[350px]">
+    <div className="descriptionText h-7 max-w-[250px] text-center lg:text-end min-[1750px]:max-w-[350px]">
       {starIcons}
-    </p>
+    </div>
   );
 };
 

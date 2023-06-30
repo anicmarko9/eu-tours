@@ -13,11 +13,11 @@ const Tour = ({
 }): JSX.Element => {
   // static order is temporary until I find correct fix
   return (
-    <div className={staticOrder}>
-      <p className="tourText">{tourName}</p>
+    <section className={staticOrder}>
+      <h2 className="tourText">{tourName}</h2>
       <TourRating rating={tourRating} />
       <SlidingTour src={`/images/${slugifyString(tourName)}.png`} />
-    </div>
+    </section>
   );
 };
 

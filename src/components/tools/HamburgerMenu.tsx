@@ -40,7 +40,7 @@ const BurgerMenu = ({
       // Access the window object and set the initial window width
       setWindowWidth(window.innerWidth);
       // Add an event listener to update the window width on resize
-      const handleResize = () => {
+      const handleResize = (): void => {
         setWindowWidth(window.innerWidth);
       };
       window.addEventListener("resize", handleResize);
@@ -59,12 +59,13 @@ const BurgerMenu = ({
       className={`fixed top-0 z-30 h-screen w-full text-primary ${
         isMenuOpen ? "animate-slideInRight" : "scale-0 animate-slideOutRight"
       }`}
+      role="navigation"
     >
-      <div className="absolute right-0 top-0 z-30 h-full w-full space-y-4 bg-bodyBg p-4 shadow-lg sm:w-3/5">
-        <div className="titleText flex items-center justify-between text-secondary">
+      <nav className="absolute right-0 top-0 z-30 h-full w-full space-y-4 bg-bodyBg p-4 shadow-lg sm:w-3/5">
+        <section className="titleText flex items-center justify-between text-secondary">
           <Logo />
           <IoClose onClick={toggleMenu} className="closeBtn" />
-        </div>
+        </section>
         <hr className="border-1 border-primary" />
         <HeaderLinkGroup
           links={[
@@ -77,29 +78,29 @@ const BurgerMenu = ({
         />
         <hr className="border-1 border-primary" />
         {session?.user ? (
-          <div className="flex justify-between">
+          <section className="flex justify-between">
             <div className="flex space-x-2">
               <UserAvatar session={session} />
               {/* There will always be a name, but not always an email. */}
               {session.user.name && (
-                <p className="hoverEffect descriptionText flex h-12 cursor-pointer flex-col justify-evenly hover:text-secondary">
+                <div className="hoverEffect descriptionText flex h-12 cursor-pointer flex-col justify-evenly hover:text-secondary">
                   {session.user.email && (
                     <span className="break-words break-all font-bold">
                       {getEmailUsername(session.user.email)}
                     </span>
                   )}
                   <span>{session.user.name}</span>
-                </p>
+                </div>
               )}
             </div>
             <PrimaryBtn authType={AuthType.SignOut} />
-          </div>
+          </section>
         ) : (
-          <div className="flex justify-end">
+          <section className="flex justify-end">
             <PrimaryBtn authType={AuthType.SignIn} />
-          </div>
+          </section>
         )}
-      </div>
+      </nav>
       <div
         className="absolute left-0 top-0 z-30 h-0 w-0 bg-black bg-opacity-30 sm:h-full sm:w-2/5"
         onClick={toggleMenu}
