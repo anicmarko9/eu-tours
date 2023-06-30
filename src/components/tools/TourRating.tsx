@@ -6,19 +6,13 @@ const TourRating = ({ rating }: { rating: number }): JSX.Element => {
   const decimalPart: number = rating - roundedRating;
 
   for (let i = 1; i <= 5; i++) {
-    if (i <= roundedRating) {
-      starIcons.push(<ImStarFull className="inline" key={i} />);
-    } else if (
-      i === roundedRating + 1 &&
-      decimalPart >= 0.25 &&
-      decimalPart <= 0.75
-    ) {
-      starIcons.push(<ImStarHalf className="inline" key={i} />);
-    } else if (i === roundedRating + 1 && decimalPart >= 0.75) {
-      starIcons.push(<ImStarFull className="inline" key={i} />);
-    } else {
-      starIcons.push(<ImStarEmpty className="inline" key={i} />);
-    }
+    i <= roundedRating
+      ? starIcons.push(<ImStarFull className="inline" key={i} />)
+      : i === roundedRating + 1 && decimalPart >= 0.25 && decimalPart <= 0.75
+      ? starIcons.push(<ImStarHalf className="inline" key={i} />)
+      : i === roundedRating + 1 && decimalPart >= 0.75
+      ? starIcons.push(<ImStarFull className="inline" key={i} />)
+      : starIcons.push(<ImStarEmpty className="inline" key={i} />);
   }
 
   return (
