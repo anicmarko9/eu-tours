@@ -20,11 +20,17 @@ const LocationOrDate = ({
         <MdOutlineCalendarMonth className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
       )}
       <div className="hoverEffect cursor-pointer">
-        <p className="space-x-2">
+        <h2 className="space-x-2">
           <span>{choose}</span>
           <IoIosArrowDown className="hoverEffect inline text-secondary" />
-        </p>
-        <p className="text-white">{choose === "Location" ? location : date}</p>
+        </h2>
+        <h2 className="text-white">
+          {choose === "Location" ? (
+            location
+          ) : (
+            <time dateTime="2023-09-16">{date}</time>
+          )}
+        </h2>
       </div>
     </div>
   );

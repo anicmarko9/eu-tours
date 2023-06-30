@@ -14,10 +14,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <ToastContainer toastClassName="font-montserrat" />
-      <main>
-        <Component {...pageProps} />
-        <Analytics />
-      </main>
+      <Component {...pageProps} />
+      <Analytics />
     </SessionProvider>
   );
 };

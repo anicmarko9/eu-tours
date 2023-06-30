@@ -6,7 +6,7 @@ import Tour from "./images/Tour";
 
 const ToursSlideshow = (): JSX.Element => {
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden">
       <BgImage src="/images/test.png" />
       <VignetteScreen />
       <div className="containerSpacing relative flex h-full w-full flex-wrap space-x-0 text-white lg:flex-nowrap lg:space-x-16">
@@ -26,21 +26,19 @@ const ToursSlideshow = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div className="z-10 order-first flex h-[30%] w-full flex-col justify-center lg:order-last lg:h-full lg:w-1/2">
-          <div className="flex h-full w-full flex-col justify-center lg:h-4/5 lg:items-end">
-            <p className="titleText text-center text-4xl sm:text-6xl lg:text-start lg:text-7xl xl:text-8xl">
-              zlatibor
-            </p>
-            <p className="descriptionText mb-4 text-justify">
-              Welcome to Zlatibor, the crown jewel of Serbian mountains! Nestled
-              in the heart of untouched nature, Zlatibor offers an unforgettable
-              escape for nature enthusiasts and adventure seekers alike.
-            </p>
-            <PrimaryBtn text="Book" />
-          </div>
-        </div>
+        <section className="z-10 order-first flex h-[30%] w-full flex-col justify-center lg:order-last lg:h-full lg:w-1/2 lg:items-end">
+          <h2 className="titleText text-center text-4xl sm:text-6xl lg:text-start lg:text-7xl xl:text-8xl">
+            zlatibor
+          </h2>
+          <p className="descriptionText mb-4 text-justify">
+            Welcome to Zlatibor, the crown jewel of Serbian mountains! Nestled
+            in the heart of untouched nature, Zlatibor offers an unforgettable
+            escape for nature enthusiasts and adventure seekers alike.
+          </p>
+          <PrimaryBtn text="Book" />
+        </section>
       </div>
-    </div>
+    </section>
   );
 };
 
