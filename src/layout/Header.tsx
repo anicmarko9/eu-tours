@@ -1,6 +1,8 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+
 import HamburgerMenu from "src/components/tools/HamburgerMenu";
 import Logo from "src/components/images/Logo";
 import UserAvatar from "src/components/images/UserAvatar";
@@ -75,7 +77,25 @@ const Header = (): JSX.Element => {
               </section>
             </div>
           ) : (
-            <RxHamburgerMenu className="burgerMenu" onClick={toggleMenu} />
+            <NavigationMenu.Root className="NavigationMenuRoot">
+              <NavigationMenu.List className="NavigationMenuList">
+                <NavigationMenu.Item>
+                  <NavigationMenu.Trigger className="NavigationMenuTrigger">
+                    <RxHamburgerMenu
+                      className="burgerMenu"
+                      onClick={toggleMenu}
+                    />
+                  </NavigationMenu.Trigger>
+                  <NavigationMenu.Content className="absolute top-8 left-[-120px] w-full ">
+                    <ul className="flex flex-col gap-3 w-full bg-black bg-opacity-30 rounded p-5 whitespace-nowrap">
+                      <li className="text-white"> Inside Hamburger</li>
+                      <li className="text-white">Inside Hamburger</li>
+                      <li className="text-white">Inside Hamburger</li>
+                    </ul>
+                  </NavigationMenu.Content>
+                </NavigationMenu.Item>
+              </NavigationMenu.List>
+            </NavigationMenu.Root>
           )}
         </nav>
       </header>

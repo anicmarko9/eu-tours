@@ -54,6 +54,7 @@ const BurgerMenu = ({
   if (!isMenuOpenLate || windowWidth >= 1024) return <></>;
 
   return (
+
     <div
       className={`fixed top-0 z-30 h-screen w-full text-primary ${
         isMenuOpen ? "animate-slideInRight" : "scale-0 animate-slideOutRight"
