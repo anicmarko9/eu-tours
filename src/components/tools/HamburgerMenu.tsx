@@ -68,10 +68,26 @@ const BurgerMenu = ({
         <hr className="border-1 border-primary" />
         <HeaderLinkGroup
           links={[
-            { link: "/about-us", text: "Discover" },
-            { link: "/bookings", text: "Services" },
-            { link: "/community", text: "Community" },
-            { link: "/about", text: "About Us" },
+            {
+              link: "/about-us",
+              text: "Discover",
+              subLinks: [],
+            },
+            {
+              link: "/bookings",
+              text: "Services",
+              subLinks: [],
+            },
+            {
+              link: "/community",
+              text: "Community",
+              subLinks: [],
+            },
+            {
+              link: "/about",
+              text: "About Us",
+              subLinks: [],
+            },
           ]}
           isHamburger={true}
         />
