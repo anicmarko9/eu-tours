@@ -5,10 +5,15 @@ const HeaderLinkGroup = ({
   links,
   isHamburger,
 }: {
-  links: { link: string; text: string }[];
+  // links: { link: string; text: string }[];
+  //links:[ {link:"ink",text:'hello',subLinks:[{sublink:"doona"}]} ]
+  links: {
+    link: string;
+    text: string;
+    subLinks: { subLink: string; subTitle: string }[];
+  }[];
   isHamburger?: boolean;
 }): JSX.Element => {
-
   return (
     <ul
       className={
@@ -18,8 +23,11 @@ const HeaderLinkGroup = ({
       }
     >
       {links.map(
-        ({ link, text }, index: number): JSX.Element => (
-          <NavigationMenu.Root className="NavigationMenuRoot">
+        ({ link, text, subLinks }, index: number): JSX.Element => (
+          <NavigationMenu.Root
+            className="NavigationMenuRoot"
+            key={`${link}-${index}`}
+          >
             <NavigationMenu.List className="NavigationMenuList">
               <NavigationMenu.Item>
                 <NavigationMenu.Trigger className="NavigationMenuTrigger">
@@ -34,11 +42,22 @@ const HeaderLinkGroup = ({
                     </Link>
                   </li>
                 </NavigationMenu.Trigger>
-                <NavigationMenu.Content className="absolute top-8 left-1 w-full ">
-                  <ul className="flex flex-col gap-1 w-500 bg-black bg-opacity-30 rounded p-5">
-                    <li className="text-white">hello</li>
-                    <li className="text-white">hello</li>
-                    <li className="text-white">hello</li>
+                <NavigationMenu.Content className=" top-8 left-1 w-full ">
+                  <ul className="absolute text-sm flex flex-col gap-1 bg-black bg-opacity-30 rounded p-1  w-full whitespace-nowrap min-w-[180px]">
+                    {subLinks.map(
+                      ({ subLink, subTitle }, index: number): JSX.Element => (
+                        <li key={`${subLink}-${index}`}>
+                          <Link
+                            className={`hoverEffect ${
+                              isHamburger ? "hover:text-secondary" : "p-3"
+                            }`}
+                            href={subLink}
+                          >
+                            {subTitle}
+                          </Link>
+                        </li>
+                      )
+                    )}
                   </ul>
                 </NavigationMenu.Content>
               </NavigationMenu.Item>
@@ -51,5 +70,3 @@ const HeaderLinkGroup = ({
 };
 
 export default HeaderLinkGroup;
-
-

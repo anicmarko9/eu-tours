@@ -54,7 +54,6 @@ const BurgerMenu = ({
   if (!isMenuOpenLate || windowWidth >= 1024) return <></>;
 
   return (
-
     <div
       className={`fixed top-0 z-30 h-screen w-full text-primary ${
         isMenuOpen ? "animate-slideInRight" : "scale-0 animate-slideOutRight"
@@ -69,10 +68,26 @@ const BurgerMenu = ({
         <hr className="border-1 border-primary" />
         <HeaderLinkGroup
           links={[
-            { link: "/about-us", text: "Discover" },
-            { link: "/bookings", text: "Services" },
-            { link: "/community", text: "Community" },
-            { link: "/about", text: "About Us" },
+            {
+              link: "/about-us",
+              text: "Discover",
+              subLinks: [],
+            },
+            {
+              link: "/bookings",
+              text: "Services",
+              subLinks: [],
+            },
+            {
+              link: "/community",
+              text: "Community",
+              subLinks: [],
+            },
+            {
+              link: "/about",
+              text: "About Us",
+              subLinks: [],
+            },
           ]}
           isHamburger={true}
         />

@@ -42,6 +42,7 @@
   .one {
     @apply absolute right-0 top-[30.75%] w-[50%] translate-x-[62.5%] transform duration-500 ease-in-out min-[520px]:translate-x-[55%] md:translate-x-[80%] lg:right-auto lg:top-auto lg:w-[20%] lg:translate-x-[150%] xl:w-1/2 xl:translate-x-[53%] 2xl:w-1/2 2xl:translate-x-[43%];
   }
+
   .arrowContainer {
     @apply flex cursor-pointer items-center justify-center rounded-lg border-2 border-primary bg-secondary p-[2px] text-xl text-white shadow-2xl transition-all duration-200 ease-in hover:bg-white hover:text-secondary lg:text-2xl;
   }
