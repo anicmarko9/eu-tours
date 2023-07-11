@@ -53,18 +53,41 @@ const Header = (): JSX.Element => {
             <div className="flex w-3/4 items-center justify-between">
               <HeaderLinkGroup
                 links={[
-                  { link: "/about-us", text: "Discover", subLinks: [] },
+                  {
+                    link: "/about-us",
+                    text: "Discover",
+                    subLinks: [
+                      { subLink: "#", subTitle: "Why EU Tours" },
+                      { subLink: "#", subTitle: "Support Us" },
+                    ],
+                  },
                   {
                     link: "/bookings",
                     text: "Services",
-                    subLinks: [],
+                    subLinks: [
+                      { subLink: "#", subTitle: "FAQs" },
+                      { subLink: "#", subTitle: "Support Center" },
+                      { subLink: "#", subTitle: "Contact Us" },
+                    ],
                   },
                   {
                     link: "/community",
                     text: "Community",
-                    subLinks: [],
+                    subLinks: [
+                      { subLink: "#", subTitle: "Capital" },
+                      { subLink: "#", subTitle: "Security" },
+                      { subLink: "#", subTitle: "News and Blogs" },
+                    ],
                   },
-                  { link: "/about", text: "About Us", subLinks: [] },
+                  {
+                    link: "/about",
+                    text: "About Us",
+                    subLinks: [
+                      { subLink: "#", subTitle: "About Us" },
+                      { subLink: "#", subTitle: "Features" },
+                      { subLink: "#", subTitle: "Reviews" },
+                    ],
+                  },
                 ]}
               />
               <section className="w-[180px]">

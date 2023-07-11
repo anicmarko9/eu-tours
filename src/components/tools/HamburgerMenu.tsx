@@ -71,22 +71,37 @@ const BurgerMenu = ({
             {
               link: "/about-us",
               text: "Discover",
-              subLinks: [],
+              subLinks: [
+                { subLink: "#", subTitle: "Why EU Tours" },
+                { subLink: "#", subTitle: "Support Us" },
+              ],
             },
             {
               link: "/bookings",
               text: "Services",
-              subLinks: [],
+              subLinks: [
+                { subLink: "#", subTitle: "FAQs" },
+                { subLink: "#", subTitle: "Support Center" },
+                { subLink: "#", subTitle: "Contact Us" },
+              ],
             },
             {
               link: "/community",
               text: "Community",
-              subLinks: [],
+              subLinks: [
+                { subLink: "#", subTitle: "Capital" },
+                { subLink: "#", subTitle: "Security" },
+                { subLink: "#", subTitle: "News and Blogs" },
+              ],
             },
             {
               link: "/about",
               text: "About Us",
-              subLinks: [],
+              subLinks: [
+                { subLink: "#", subTitle: "About Us" },
+                { subLink: "#", subTitle: "Features" },
+                { subLink: "#", subTitle: "Reviews" },
+              ],
             },
           ]}
           isHamburger={true}
