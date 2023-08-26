@@ -9,7 +9,7 @@ const SignInPage = () => {
                     alt="Login Illustration"
                     width={600}
                     height={400}
-                    className='mt-10' />
+                    className='mt-16' />
             </div>
             <div className="w-full md:w-1/2 bg-gray-100 p-8 flex flex-col justify-center items-center shadow-white">
                 <div className="bg-white p-20 rounded-lg text-center shadow-md">
