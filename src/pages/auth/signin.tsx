@@ -8,7 +8,7 @@ const SignIn: NextPage = () => {
     return (
         <main className="min-h-screen flex">
             <div className="hidden md:w-1/2 bg-gradient-to-t from-darkerOrange to-lighterOrange md:flex justify-center items-center">
-                <Image src="/images/login.png"
+                <Image src="/images/signin.png"
                     alt="Login Illustration"
                     width={600}
                     height={600}
