@@ -64,7 +64,7 @@ const Footer = (): JSX.Element => {
             href="/privacy"
             className="hoverEffect cursor-pointer hover:text-secondary"
           >
-            <small>Privacy Policy</small>
+            <small>Privacy Policy </small>
           </Link>
         </div>
       </section>

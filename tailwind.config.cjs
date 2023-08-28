@@ -14,7 +14,7 @@ module.exports = {
         header: "#9DB2BF",
         darkerOrange: "#E65100",
         lighterOrange: "#FF8000",
-        darkerBlue: "#1F1E3B", 
+        darkerBlue: "#1F1E3B",
         lighterBlue: "#3A399F",
         bodyBg: "#DDD",
       },

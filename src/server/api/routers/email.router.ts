@@ -5,9 +5,9 @@ import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const emailRouter = createTRPCRouter({
   sendEmail: protectedProcedure.mutation(
-    async ({ ctx }) => await sendVerificationEmail(ctx.session.user as user)
+    async ({ ctx }) => await sendVerificationEmail(ctx.session.user as user),
   ),
   verifyEmail: protectedProcedure.mutation(
-    async ({ ctx }) => await verifyEmail(ctx.session.user.id)
+    async ({ ctx }) => await verifyEmail(ctx.session.user.id),
   ),
 });
