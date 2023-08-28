@@ -20,7 +20,7 @@ const FooterLinkGroup = ({
                 {text}
               </Link>
             </li>
-          )
+          ),
         )}
       </ul>
     </section>

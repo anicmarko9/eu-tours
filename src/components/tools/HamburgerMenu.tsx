@@ -29,7 +29,7 @@ const BurgerMenu = ({
   signIn: (
     provider?: LiteralUnion<BuiltInProviderType> | undefined,
     options?: SignInOptions | undefined,
-    authorizationParams?: SignInAuthorizationParams | undefined
+    authorizationParams?: SignInAuthorizationParams | undefined,
   ) => Promise<unknown>;
 }): JSX.Element => {
   // Props are passed from "Header" component.

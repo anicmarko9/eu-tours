@@ -56,12 +56,12 @@ const HeaderLinkGroup = ({
                           {subTitle}
                         </Link>
                       </li>
-                    )
+                    ),
                   )}
                 </ul>
               </Content>
             </Item>
-          )
+          ),
         )}
       </List>
     </Root>

@@ -22,7 +22,7 @@ const LoginSchema = z.object({
 });
 
 export const validateLogin = (
-  input: unknown
+  input: unknown,
 ): {
   email: string;
   password: string;
@@ -57,7 +57,7 @@ const RegisterSchema = z.object({
 });
 
 export const validateRegister = (
-  input: unknown
+  input: unknown,
 ): {
   name: string;
   email: string;
