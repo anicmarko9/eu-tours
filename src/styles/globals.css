@@ -9,12 +9,15 @@
   .titleText {
     @apply text-base font-bold uppercase tracking-wider sm:text-lg lg:text-xl;
   }
+
   .logoText {
     @apply text-sm font-bold uppercase tracking-wider sm:text-base lg:text-lg;
   }
+  
   .containerSpacing {
     @apply p-4 2xl:px-32 2xl:py-16;
   }
+
   .gradientOrangeButton {
     @apply bg-white bg-gradient-to-r from-darkerOrange to-lighterOrange font-bold transition-all duration-200 ease-in hover:border-secondary hover:bg-white hover:bg-none hover:text-secondary;
   }
@@ -22,7 +25,7 @@
     @apply bg-white bg-gradient-to-r from-darkerBlue to-lighterBlue font-bold transition-all duration-200 ease-in hover:border-primary hover:bg-white hover:bg-none hover:text-primary;
   }
   .hoverEffect {
-    @apply transition-all duration-200 ease-in hover:text-white;
+    @apply transition-all duration-[350ms] ease-in-out hover:text-white;
   }
   .closeBtn {
     @apply h-8 w-8 cursor-pointer rounded-full text-secondary transition-all duration-200 ease-in hover:bg-secondary hover:text-white;

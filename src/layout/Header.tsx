@@ -1,5 +1,5 @@
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import HamburgerMenu from "src/components/tools/HamburgerMenu";
 import Logo from "src/components/images/Logo";
@@ -8,7 +8,7 @@ import { AuthType } from "src/types/types";
 import PrimaryBtn from "src/components/tools/PrimaryBtn";
 import HeaderLinkGroup from "src/components/links/HeaderLinkGroup";
 
-const Header = (): JSX.Element => {
+export default function Header() {
   const { data: session, status } = useSession<boolean>();
   const loading: boolean = status === "loading";
 
@@ -24,7 +24,7 @@ const Header = (): JSX.Element => {
     isMenuOpen
       ? setTimeout(function () {
           setIsMenuOpenLate(!isMenuOpenLate);
-        }, 1000)
+        }, 100)
       : setIsMenuOpenLate(!isMenuOpenLate);
   };
 
@@ -47,7 +47,7 @@ const Header = (): JSX.Element => {
   return (
     <>
       <header className="containerSpacing absolute top-0 z-10 flex h-16 w-full items-center py-0 text-header backdrop-blur-lg 2xl:px-32">
-        <nav className="descriptionText flex w-full justify-between">
+        <nav className="descriptionText flex w-full justify-between pt-4 pl-4 pr-4">
           <Logo whiteHover={true} />
           {windowWidth >= 1024 ? (
             <div className="flex w-3/4 items-center justify-between">
@@ -83,7 +83,6 @@ const Header = (): JSX.Element => {
                     link: "/about",
                     text: "About Us",
                     subLinks: [
-                      { subLink: "#", subTitle: "About Us" },
                       { subLink: "#", subTitle: "Features" },
                       { subLink: "#", subTitle: "Reviews" },
                     ],
@@ -120,6 +119,4 @@ const Header = (): JSX.Element => {
       />
     </>
   );
-};
-
-export default Header;
+}

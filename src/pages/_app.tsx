@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { api } from "../utils/api";
-import "../styles/globals.scss";
+import "../styles/globals.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
