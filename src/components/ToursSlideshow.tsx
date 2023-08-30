@@ -1,31 +1,31 @@
-import VignetteScreen from "./images/VignetteScreen";
-import BgImage from "./images/BgImage";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import PrimaryBtn from "./tools/PrimaryBtn";
-import Tour from "./images/Tour";
-import React, { useState } from "react";
+import VignetteScreen from './images/VignetteScreen';
+import BgImage from './images/BgImage';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import PrimaryBtn from './tools/PrimaryBtn';
+import Tour from './images/Tour';
+import React, { useState } from 'react';
 
 const ToursSlideshow = (): JSX.Element => {
   const [activeTourIndex, setActiveTourIndex] = useState(0);
   const tours = [
-    { tourName: "helsinki", tourRating: 4.1, staticOrder: "one" },
-    { tourName: "paris", tourRating: 4.6, staticOrder: "two" },
-    { tourName: "la valletta", tourRating: 5, staticOrder: "three" },
-    { tourName: "prague", tourRating: 3.7, staticOrder: "four" },
+    { tourName: 'helsinki', tourRating: 4.1, staticOrder: 'one' },
+    { tourName: 'paris', tourRating: 4.6, staticOrder: 'two' },
+    { tourName: 'la valletta', tourRating: 5, staticOrder: 'three' },
+    { tourName: 'prague', tourRating: 3.7, staticOrder: 'four' },
   ];
 
   const handlePrevTour = () => {
     setActiveTourIndex((prevIndex) =>
-      prevIndex === 0 ? tours.length - 1 : prevIndex - 1
+      prevIndex === 0 ? tours.length - 1 : prevIndex - 1,
     );
   };
 
   const handleNextTour = () => {
     setActiveTourIndex((prevIndex) => (prevIndex + 1) % tours.length);
   };
-  const handleTourClick = (index: number) => {
-    setActiveTourIndex(index);
-  };
+  // const handleTourClick = (index: number) => {
+  //   setActiveTourIndex(index);
+  // };
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -33,7 +33,7 @@ const ToursSlideshow = (): JSX.Element => {
       <VignetteScreen />
       <div className="containerSpacing relative flex h-full w-full flex-wrap space-x-0 text-white lg:flex-nowrap lg:space-x-16">
         <div className="order-last flex h-[70%] w-full flex-col justify-center lg:order-first lg:h-full lg:w-1/2 2xl:w-[45%]">
-          <div className="flex h-full w-full lg:h-4/5 lg:items-center transition-all ease-in-out duration-1000" >
+          <div className="flex h-full w-full lg:h-4/5 lg:items-center transition-all ease-in-out duration-1000">
             {tours.map((tour, index) => (
               <Tour
                 key={tour.tourName}
@@ -41,12 +41,12 @@ const ToursSlideshow = (): JSX.Element => {
                 tourRating={tour.tourRating}
                 staticOrder={
                   index === activeTourIndex
-                    ? "one"
+                    ? 'one'
                     : index === (activeTourIndex + 1) % tours.length
-                      ? "two"
-                      : index === (activeTourIndex + 2) % tours.length
-                        ? "three"
-                        : "four"
+                    ? 'two'
+                    : index === (activeTourIndex + 2) % tours.length
+                    ? 'three'
+                    : 'four'
                 }
               />
             ))}

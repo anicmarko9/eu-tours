@@ -7,9 +7,11 @@
     "dev": "next dev",
     "build": "next build && prisma generate",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint \"src/**/*.{ts,tsx,js}\" --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,html,css,md,json,yaml,yml}\"",
-    "ci:format": "prettier --list-different \"**/*.{js,jsx,ts,tsx,html,css,md,json,yaml,yml}\""
+    "typecheck": "tsc",
+    "ci:format": "prettier --list-different \"**/*.{js,jsx,ts,tsx,html,css,md,json,yaml,yml}\"",
+    "ci:lint": "eslint \"src/**/*.{ts,tsx,js}\""
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
