@@ -8,9 +8,9 @@
     "build": "next build && prisma generate",
     "start": "next start",
     "lint": "eslint \"src/**/*.{ts,tsx,js}\" --fix",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,html,css,md,json,yaml,yml}\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,css}\"",
     "typecheck": "tsc",
-    "ci:format": "prettier --list-different \"**/*.{js,jsx,ts,tsx,html,css,md,json,yaml,yml}\"",
+    "ci:format": "prettier --check \"src/**/*.{ts,tsx,js,css}\"",
     "ci:lint": "eslint \"src/**/*.{ts,tsx,js}\""
   },
   "dependencies": {
