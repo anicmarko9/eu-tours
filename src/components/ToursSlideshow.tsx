@@ -1,17 +1,17 @@
-import VignetteScreen from './images/VignetteScreen';
-import BgImage from './images/BgImage';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import PrimaryBtn from './tools/PrimaryBtn';
-import Tour from './images/Tour';
-import React, { useState } from 'react';
+import VignetteScreen from "./images/VignetteScreen";
+import BgImage from "./images/BgImage";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import PrimaryBtn from "./tools/PrimaryBtn";
+import Tour from "./images/Tour";
+import React, { useState } from "react";
 
 const ToursSlideshow = (): JSX.Element => {
   const [activeTourIndex, setActiveTourIndex] = useState(0);
   const tours = [
-    { tourName: 'helsinki', tourRating: 4.1, staticOrder: 'one' },
-    { tourName: 'paris', tourRating: 4.6, staticOrder: 'two' },
-    { tourName: 'la valletta', tourRating: 5, staticOrder: 'three' },
-    { tourName: 'prague', tourRating: 3.7, staticOrder: 'four' },
+    { tourName: "helsinki", tourRating: 4.1, staticOrder: "one" },
+    { tourName: "paris", tourRating: 4.6, staticOrder: "two" },
+    { tourName: "la valletta", tourRating: 5, staticOrder: "three" },
+    { tourName: "prague", tourRating: 3.7, staticOrder: "four" },
   ];
 
   const handlePrevTour = () => {
@@ -41,12 +41,12 @@ const ToursSlideshow = (): JSX.Element => {
                 tourRating={tour.tourRating}
                 staticOrder={
                   index === activeTourIndex
-                    ? 'one'
+                    ? "one"
                     : index === (activeTourIndex + 1) % tours.length
-                    ? 'two'
+                    ? "two"
                     : index === (activeTourIndex + 2) % tours.length
-                    ? 'three'
-                    : 'four'
+                    ? "three"
+                    : "four"
                 }
               />
             ))}
