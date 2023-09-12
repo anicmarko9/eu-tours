@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { slugifyString } from "src/helper/helper";
 import TourRating from "../tools/TourRating";
 import SlidingTour from "./SlidingTour";
@@ -11,12 +12,25 @@ const Tour = ({
   tourRating: number;
   staticOrder: string;
 }): JSX.Element => {
-  // static order is temporary until I find correct fix
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = `/images/${slugifyString(tourName)}.png`;
+    image.onload = () => {
+      setImageLoaded(true);
+    };
+  }, [tourName]);
+
   return (
     <section className={staticOrder}>
       <h2 className="tourText">{tourName}</h2>
       <TourRating rating={tourRating} />
-      <SlidingTour src={`/images/${slugifyString(tourName)}.png`} />
+      {imageLoaded ? (
+        <SlidingTour src={`/images/${slugifyString(tourName)}.png`} />
+      ) : (
+        <div className="flex justify-center items-center w-12 h-12 rounded-full animate-spin border-8 border-solid border-orange-500 border-t-transparent"></div>
+      )}
     </section>
   );
 };
