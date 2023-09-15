@@ -13,7 +13,7 @@ const PrimaryBtn = ({
   };
   return (
     <button
-      className={`gradientOrangeButton h-12 w-[120px] self-center rounded-lg border-2 border-primary px-4 text-base font-bold capitalize tracking-wider text-white lg:self-end ${
+      className={`gradientOrangeButton h-12 w-[120px] self-center rounded-lg border-2 border-white px-4 text-base font-bold capitalize tracking-wider text-white lg:self-end ${
         authType ? "" : "sm:text-lg lg:text-xl"
       }`}
       onClick={() =>
