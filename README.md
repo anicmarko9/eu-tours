@@ -1,3 +1,11 @@
+### UX/UI Links
+
+- Landing page: [link](https://dribbble.com/shots/16461003-Travelious-Travelling-Services-Landing-Page-Website/attachments/11631202?mode=media),
+- UX skeleton + wireframes: [link](https://www.behance.net/gallery/171751519/Travel-Website-Design-Landing-Page),
+- Content below the Landing page (image left, text right; image right, text left, etc.): [link](https://www.behance.net/gallery/168961811/Travel-agency-landing-page),
+- Tour cards (second picture): [link](https://dribbble.com/shots/3532364-The-Great-Outdoors),
+- Animation slide: [link](https://dribbble.com/shots/10474951-Creative-Travel-Website-Design?utm_source=pinterest&utm_campaign=pinterest_shot&utm_content=Creative+Travel+Website+Design&utm_medium=Social_Share).
+
 This app is built using Next.js with TypeScript. I am currently working on this app, it only has few features. The goal is to design frontend first, and then implement backend services.
 
 For frontend I've used React with TailwindCSS, and MapBox for Tour maps and locations.
