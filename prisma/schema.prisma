@@ -10,20 +10,20 @@ datasource db {
 }
 
 model account {
-  id                       String    @id @default(uuid())
+  id                       String  @id @default(uuid())
   userId                   String
   type                     String
   provider                 String
   providerAccountId        String
-  refresh_token            String?   // @db.Text
-  access_token             String?   // @db.Text
+  refresh_token            String? // @db.Text
+  access_token             String? // @db.Text
   expires_at               BigInt?
   refresh_token_expires_in BigInt?
   token_type               String?
   scope                    String?
-  id_token                 String?   // @db.Text
+  id_token                 String? // @db.Text
   session_state            String?
-  user                     user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user                     user    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
