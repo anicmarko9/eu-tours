@@ -1,15 +1,20 @@
 import React from "react";
-import Image from "next/image";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import type { NextPage } from "next";
 import { signIn } from "next-auth/react";
-import Logo from "src/components/images/Logo";
+import Image from "next/image";
 
 const SignIn: NextPage = () => {
   return (
     <main className="min-h-screen flex">
       <div className="hidden md:w-1/2 h-screen bg-gradient-to-t md:flex justify-center items-center overflow-hidden">
-        <img src="https://images.pexels.com/photos/3254754/pexels-photo-3254754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+      <Image
+          src="/images/bg-signin.png"
+          alt="Login Illustration"
+          width={1000}
+          height={1000}
+          priority
+        />
       </div>
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center">
         <div className="flex flex-col mt-4 md:mt-6 p-8 md:p-12 rounded-lg">

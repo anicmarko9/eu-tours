@@ -1,9 +1,7 @@
-import VignetteScreen from "./images/VignetteScreen";
-import BgImage from "./images/BgImage";
+import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import PrimaryBtn from "./tools/PrimaryBtn";
 import Tour from "./images/Tour";
-import React, { useState } from "react";
 
 const ToursSlideshow = (): JSX.Element => {
   const [activeTourIndex, setActiveTourIndex] = useState(0);

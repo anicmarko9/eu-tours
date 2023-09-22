@@ -1,6 +1,4 @@
-import { SlLocationPin } from "react-icons/sl";
 import { IoIosArrowDown } from "react-icons/io";
-import { MdOutlineCalendarMonth } from "react-icons/md";
 import type { SelectionType } from "src/types/types";
 
 const LocationOrDate = ({

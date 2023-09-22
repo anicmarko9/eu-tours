@@ -1,12 +1,6 @@
-import VignetteScreen from "./images/VignetteScreen";
-import BgImage from "./images/BgImage";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import AliceCarousel from 'react-alice-carousel';
+
 import "react-alice-carousel/lib/alice-carousel.css";
 import Marquee from "react-fast-marquee";
-import { slugifyString } from "src/helper/helper";
-import Tour from "./images/Tour";
-import React, { useState } from "react";
 
 const ToursSlideshow = (): JSX.Element => {
 
@@ -37,15 +31,15 @@ const ToursSlideshow = (): JSX.Element => {
 
   return (
 
-        <div className=' flex flex-row gap-28  mt-44 flex-wrap mb-36'>
+        <div className='flex flex-row gap-28  mt-44 flex-wrap'>
       
 
       <div className='followOnInstaMarqueeConatiner'>
 
         <Marquee pauseOnHover={false} speed={100} loop={0} >
-        {images.map((image) => (
+        {images.map((image,index) => (
             
-            <img src={image.url} className='mrMl carouselIMg' />
+            <img key={index+1} src={image.url} className='mrMl carouselIMg' alt="Eu Tour EUROPE images" />
             
            ))}
         </Marquee>
