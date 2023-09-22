@@ -1,27 +1,30 @@
-import VignetteScreen from "./images/VignetteScreen";
-import BgImage from "./images/BgImage";
-import JourneyImage from "./images/JourneyImage";
-import SearchBar from "./tools/SearchBar";
 
-const LandingPage = (): JSX.Element => {
+import SearchBar from "./tools/SearchBar";
+import Slider from "./Slider"
+
+
+const LandingPage = (): JSX.Element =>
+{
   return (
-    <section className="relative h-screen w-full">
-      <BgImage src="/images/leaves-bg.jpg" />
-      <VignetteScreen />
-      <div className="containerSpacing relative flex h-full w-full text-header sm:flex-wrap lg:flex-nowrap">
-        <section className="flex h-full w-full flex-col justify-evenly pt-16 lg:w-7/12 lg:justify-center 2xl:w-1/2">
-          <h1 className="flex flex-col self-center text-center text-4xl font-bold uppercase tracking-wider sm:self-start sm:text-start sm:text-6xl lg:text-7xl xl:text-8xl">
-            <span className="text-white">Live your</span>
-            <span className="text-secondary">adventure</span>
-          </h1>
-          <JourneyImage isMobile={true} />
-          <p className="w-full text-xs leading-relaxed sm:w-1/2 sm:text-sm md:flex-nowrap md:text-base lg:py-4 xl:text-lg">
-            Unleash your European adventure today and immerse yourself in the
-            beauty of its diverse destinations.
+    <section className="flex flex-col items-center justify-center px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:pt- md:px-0">
+      <main className="flex flex-col items-center max-w-2xl md:px-8">
+        <header className="max-w-xl mb-10 md:mx-auto text-center my-16 sm:text-center lg:max-w-2xl md:mb-12">
+          <div className="max-w-md font-sans text-5xl leading-none text-lighter  md:mx-auto">
+            <h2 className="relative inline-block  tracking-tight ">
+              A world away in the regions of{" "}
+              <span className="relative">Europe</span>
+            </h2>
+            <p className="descriptionText text-base text-gray-500 md:text-lg  mt-2 mb-6">
+            Europe's Treasures, Your Stories
           </p>
-          <SearchBar />
-        </section>
-        <JourneyImage isMobile={false} />
+          </div>
+          <div className="w-fit mx-auto border-b border-t">
+            <SearchBar/>
+          </div>
+        </header>
+      </main>
+      <div className="-mt-32 lg:-mt-50">
+        <Slider/>
       </div>
     </section>
   );

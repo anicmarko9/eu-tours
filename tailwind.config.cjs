@@ -5,18 +5,19 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
+        Forum: ["Forum", "cursive"],
+        Poppins:["Poppins", "sans-serif"]
       },
       colors: {
         primary: "#2B2A4C",
-        secondary: "#FF6000",
+        secondary: "#A67B2A",
         tertiary: "#4F4557",
         header: "#9DB2BF",
-        darkerOrange: "#E65100",
-        lighterOrange: "#FF8000",
-        darkerBlue: "#1F1E3B",
-        lighterBlue: "#3A399F",
-        bodyBg: "#DDD",
+        darkerOrange: "#C54D3C",
+        lighterOrange: "#E2725B",
+        darkerBlack: "#000000",
+        lighterBlack: "#1F2420",
+        bodyBg: "#F9F7F3",
       },
       backgroundImage: {
         "mock-img": "url('/test.png')",

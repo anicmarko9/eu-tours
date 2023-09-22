@@ -4,13 +4,13 @@
 
 @layer components {
   .descriptionText {
-    @apply text-xs sm:text-sm md:flex-nowrap lg:text-base;
+    @apply text-xs sm:text-sm md:flex-nowrap lg:text-base font-Poppins text-lighterBlack;
   }
   .titleText {
-    @apply text-base font-bold uppercase tracking-wider sm:text-lg lg:text-xl;
+    @apply text-base uppercase tracking-wider sm:text-lg lg:text-xl;
   }
   .logoText {
-    @apply text-sm font-bold uppercase tracking-wider sm:text-base lg:text-lg;
+    @apply text-2xl uppercase  font-Forum sm:text-2xl lg:text-2xl;
   }
   .containerSpacing {
     @apply p-4 2xl:px-32 2xl:py-16;
@@ -19,10 +19,13 @@
     @apply bg-white bg-gradient-to-r from-darkerOrange to-lighterOrange font-bold transition-all duration-200 ease-in hover:border-secondary hover:bg-white hover:bg-none hover:text-secondary;
   }
   .gradientBlueButton {
-    @apply bg-white bg-gradient-to-r from-darkerBlue to-lighterBlue font-bold transition-all duration-200 ease-in hover:border-primary hover:bg-white hover:bg-none hover:text-primary;
+    @apply bg-white bg-gradient-to-r from-darkerBlack to-lighterBlack font-bold transition-all duration-200 ease-in hover:border-primary hover:bg-white hover:bg-none hover:text-primary;
   }
   .hoverEffect {
-    @apply transition-all duration-200 ease-in hover:text-white;
+    @apply transition-all duration-200 ease-in hover:shadow-sm;
+  }
+  .hoverButton {
+    @apply transition-all duration-200 ease-in hover:bg-secondary;
   }
   .closeBtn {
     @apply h-8 w-8 cursor-pointer rounded-full text-secondary transition-all duration-200 ease-in hover:bg-secondary hover:text-white;
@@ -46,6 +49,35 @@
     @apply absolute right-0 top-[30.75%] w-[50%] translate-x-[62.5%] transform duration-500 ease-in-out min-[520px]:translate-x-[55%] md:translate-x-[80%] lg:right-auto lg:top-auto lg:w-[20%] lg:translate-x-[150%] xl:w-1/2 xl:translate-x-[53%] 2xl:w-1/2 2xl:translate-x-[43%];
   }
   .arrowContainer {
-    @apply flex cursor-pointer items-center justify-center rounded-lg border-2 border-white bg-secondary p-[2px] text-xl text-white shadow-2xl transition-all duration-200 ease-in hover:bg-white hover:text-secondary lg:text-2xl;
+    @apply flex cursor-pointer items-center justify-center rounded-full p-4  hover:bg-secondary text-xl text-white shadow-2xl transition-all duration-200 ease-in bg-lighterBlack  lg:text-2xl;
   }
+  .carouselIMg{
+    @apply  float-left w-[500px] h-[100%] object-cover lg:w-[900px]
+  }
+  h1,h2,h3,h4,h5,h6{
+    @apply font-Forum
+  }
+  
+}
+
+
+.link-underline {
+  border-bottom-width: 0;
+  margin-top: 4em;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s ease-in-out;
+}
+
+.link-underline-black {
+  margin-top: 4em;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(49, 48, 49), rgb(59, 58, 59))
+}
+
+.link-underline:hover {
+  
+  background-size: 100% 1px;
+  background-position: 0 100%
 }

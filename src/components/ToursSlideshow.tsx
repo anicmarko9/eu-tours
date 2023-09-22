@@ -29,10 +29,8 @@ const ToursSlideshow = (): JSX.Element => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      <BgImage src="/images/test.png" />
-      <VignetteScreen />
-      <div className="containerSpacing relative flex h-full w-full flex-wrap space-x-0 text-white lg:flex-nowrap lg:space-x-16">
-        <div className="order-last flex h-[70%] w-full flex-col justify-center lg:order-first lg:h-full lg:w-1/2 2xl:w-[45%]">
+      <div className="containerSpacing relative flex h-full w-full flex-wrap space-x-0 text-lighterBlack lg:flex-nowrap lg:space-x-16">
+        <div className="order-last flex h-[70%] w-full flex-col justify-center lg:order-first lg:h-full lg:w-4/5 2xl:w-[45%] gap-8">
           <div className="flex h-full w-full lg:h-4/5 lg:items-center transition-all ease-in-out duration-1000">
             {tours.map((tour, index) => (
               <Tour
@@ -60,16 +58,17 @@ const ToursSlideshow = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <section className="z-10 order-first flex h-[30%] w-full flex-col justify-center lg:order-last lg:h-full lg:w-1/2 lg:items-end">
-          <h2 className="titleText text-center text-4xl sm:text-6xl lg:text-start lg:text-7xl xl:text-8xl">
+        <section className="z-10 order-first flex h-[30%] w-full flex-col justify-center lg:order-last lg:h-full my-auto lg:w-1/2 lg:items-end">
+          <h2 className="titleText text-center text-4xl sm:text-6xl lg:text-start lg:text-5xl xl:text-6xl">
             zlatibor
           </h2>
-          <p className="descriptionText mb-4 text-justify">
+          <p className="descriptionText flex flex-col text-center lg:text-right gap-4  ">
             Welcome to Zlatibor, the crown jewel of Serbian mountains! Nestled
             in the heart of untouched nature, Zlatibor offers an unforgettable
             escape for nature enthusiasts and adventure seekers alike.
+            <PrimaryBtn text="Book" />
           </p>
-          <PrimaryBtn text="Book" />
+         
         </section>
       </div>
     </section>

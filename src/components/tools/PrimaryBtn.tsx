@@ -13,8 +13,8 @@ const PrimaryBtn = ({
   };
   return (
     <button
-      className={`gradientOrangeButton h-12 w-[120px] self-center rounded-lg border-2 border-white px-4 text-base font-bold capitalize tracking-wider text-white lg:self-end ${
-        authType ? "" : "sm:text-lg lg:text-xl"
+      className={`shadow-2xl descriptionText hoverButton self-center rounded-full font-light tracking-wide captalise border h-8 my-auto w-[120px] bg-lighterBlack px-4 text-sm  text-white lg:self-end ${
+        authType ? "" : "text-sm"
       }`}
       onClick={() =>
         authType

@@ -13,18 +13,14 @@ const LocationOrDate = ({
   date?: string;
 }): JSX.Element => {
   return (
-    <div className="flex items-center space-x-4 sm:w-fit">
-      {choose === "Location" ? (
-        <SlLocationPin className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
-      ) : (
-        <MdOutlineCalendarMonth className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
-      )}
+    <div className="flex items-left space-x-4 sm:w-fit">
+      
       <div className="hoverEffect cursor-pointer">
         <h2 className="space-x-2">
           <span>{choose}</span>
           <IoIosArrowDown className="hoverEffect inline text-secondary" />
         </h2>
-        <h2 className="text-white">
+        <h2 className="text-lighterBlack">
           {choose === "Location" ? (
             location
           ) : (
