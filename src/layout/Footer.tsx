@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import FooterLinkGroup from '../components/links/FooterLinkGroup';
 import Logo from 'src/components/images/Logo';
 

@@ -1,4 +1,5 @@
 import { signIn, signOut } from 'next-auth/react';
+
 import type { AuthType } from 'src/types/types';
 
 const PrimaryBtn = ({

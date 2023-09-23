@@ -1,6 +1,7 @@
-import { signIn, signOut, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { RxHamburgerMenu } from 'react-icons/rx';
+
 import HamburgerMenu from 'src/components/tools/HamburgerMenu';
 import Logo from 'src/components/images/Logo';
 import UserAvatar from 'src/components/images/UserAvatar';

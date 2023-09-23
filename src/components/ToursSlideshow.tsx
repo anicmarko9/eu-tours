@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+
 import PrimaryBtn from './tools/PrimaryBtn';
 import Tour from './images/Tour';
 
