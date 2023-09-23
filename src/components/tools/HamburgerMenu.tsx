@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { IoClose } from "react-icons/io5";
-import { getEmailUsername } from "src/helper/helper";
+import React, { useEffect, useState } from 'react';
+import { IoClose } from 'react-icons/io5';
+import { getEmailUsername } from 'src/helper/helper';
 import type {
   LiteralUnion,
   SignInAuthorizationParams,
   SignInOptions,
   SignOutParams,
-} from "next-auth/react/types";
-import type { BuiltInProviderType } from "next-auth/providers";
-import Logo from "../images/Logo";
-import HeaderLinkGroup from "../links/HeaderLinkGroup";
-import type { Session } from "next-auth";
-import UserAvatar from "../images/UserAvatar";
-import { AuthType } from "src/types/types";
-import PrimaryBtn from "./PrimaryBtn";
+} from 'next-auth/react/types';
+import type { BuiltInProviderType } from 'next-auth/providers';
+import Logo from '../images/Logo';
+import HeaderLinkGroup from '../links/HeaderLinkGroup';
+import type { Session } from 'next-auth';
+import UserAvatar from '../images/UserAvatar';
+import { AuthType } from 'src/types/types';
+import PrimaryBtn from './PrimaryBtn';
 
 const BurgerMenu = ({
   toggleMenu,
@@ -36,17 +36,17 @@ const BurgerMenu = ({
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       // Access the window object and set the initial window width
       setWindowWidth(window.innerWidth);
       // Add an event listener to update the window width on resize
       const handleResize = (): void => {
         setWindowWidth(window.innerWidth);
       };
-      window.addEventListener("resize", handleResize);
+      window.addEventListener('resize', handleResize);
       // Clean up the event listener on component unmount
       return () => {
-        window.removeEventListener("resize", handleResize);
+        window.removeEventListener('resize', handleResize);
       };
     }
   }, []);
@@ -56,7 +56,7 @@ const BurgerMenu = ({
   return (
     <div
       className={`fixed top-0 z-30 h-screen w-full text-primary ${
-        isMenuOpen ? "animate-slideInRight" : "scale-0 animate-slideOutRight"
+        isMenuOpen ? 'animate-slideInRight' : 'scale-0 animate-slideOutRight'
       }`}
       role="navigation"
     >
@@ -69,38 +69,38 @@ const BurgerMenu = ({
         <HeaderLinkGroup
           links={[
             {
-              link: "/about-us",
-              text: "Discover",
+              link: '/about-us',
+              text: 'Discover',
               subLinks: [
-                { subLink: "#", subTitle: "Why EU Tours" },
-                { subLink: "#", subTitle: "Support Us" },
+                { subLink: '#', subTitle: 'Why EU Tours' },
+                { subLink: '#', subTitle: 'Support Us' },
               ],
             },
             {
-              link: "/bookings",
-              text: "Services",
+              link: '/bookings',
+              text: 'Services',
               subLinks: [
-                { subLink: "#", subTitle: "FAQs" },
-                { subLink: "#", subTitle: "Support Center" },
-                { subLink: "#", subTitle: "Contact Us" },
+                { subLink: '#', subTitle: 'FAQs' },
+                { subLink: '#', subTitle: 'Support Center' },
+                { subLink: '#', subTitle: 'Contact Us' },
               ],
             },
             {
-              link: "/community",
-              text: "Community",
+              link: '/community',
+              text: 'Community',
               subLinks: [
-                { subLink: "#", subTitle: "Capital" },
-                { subLink: "#", subTitle: "Security" },
-                { subLink: "#", subTitle: "News and Blogs" },
+                { subLink: '#', subTitle: 'Capital' },
+                { subLink: '#', subTitle: 'Security' },
+                { subLink: '#', subTitle: 'News and Blogs' },
               ],
             },
             {
-              link: "/about",
-              text: "About Us",
+              link: '/about',
+              text: 'About Us',
               subLinks: [
-                { subLink: "#", subTitle: "About Us" },
-                { subLink: "#", subTitle: "Features" },
-                { subLink: "#", subTitle: "Reviews" },
+                { subLink: '#', subTitle: 'About Us' },
+                { subLink: '#', subTitle: 'Features' },
+                { subLink: '#', subTitle: 'Reviews' },
               ],
             },
           ]}
