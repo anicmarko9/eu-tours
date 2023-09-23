@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
-import HamburgerMenu from 'src/components/tools/HamburgerMenu';
-import Logo from 'src/components/images/Logo';
-import UserAvatar from 'src/components/images/UserAvatar';
-import { AuthType } from 'src/types/types';
-import PrimaryBtn from 'src/components/tools/PrimaryBtn';
-import HeaderLinkGroup from 'src/components/links/HeaderLinkGroup';
+import HamburgerMenu from '@Components/tools/HamburgerMenu';
+import Logo from '@Components/images/Logo';
+import UserAvatar from '@Components/images/UserAvatar';
+import { AuthType } from '@Types/types';
+import PrimaryBtn from '@Components/tools/PrimaryBtn';
+import HeaderLinkGroup from '@Components/links/HeaderLinkGroup';
 
 const Header = (): JSX.Element => {
   const { data: session, status } = useSession<boolean>();

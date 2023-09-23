@@ -9,12 +9,12 @@ import type {
   SignOutParams,
 } from 'next-auth/react/types';
 
-import Logo from '../images/Logo';
-import HeaderLinkGroup from '../links/HeaderLinkGroup';
-import UserAvatar from '../images/UserAvatar';
-import { AuthType } from 'src/types/types';
+import Logo from '@Components/images/Logo';
+import UserAvatar from '@Components/images/UserAvatar';
+import HeaderLinkGroup from '@Components/links/HeaderLinkGroup';
 import PrimaryBtn from './PrimaryBtn';
-import { getEmailUsername } from 'src/helper/helper';
+import { getEmailUsername } from '@Helper/helper';
+import { AuthType } from '@Types/types';
 
 const BurgerMenu = ({
   toggleMenu,

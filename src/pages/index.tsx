@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 
-import LandingPage from 'src/components/LandingPage';
-import ToursSlideshow from 'src/components/ToursSlideshow';
-import Layout from 'src/layout/Layout';
+import LandingPage from '@Components/LandingPage';
+import ToursSlideshow from '@Components/ToursSlideshow';
+import Layout from '@Layout/Layout';
 
 const Home: NextPage = () => {
   return (

@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import React from 'react';
 import { toast } from 'react-toastify';
 
-import { api } from 'src/utils/api';
+import { api } from '@Utils/api';
 
 const UserSettingsPage: NextPage = () => {
   const verifyEmail = api.email.verifyEmail.useMutation();
