@@ -19,7 +19,7 @@ const HeaderLinkGroup = ({
   isHamburger?: boolean;
 }): JSX.Element => {
   return (
-    <Root className={`buttonText ${isHamburger ? 'titleText' : 'w-2/3'}`}>
+    <Root className={isHamburger ? "titleText" : "w-2/3"}>
       <List
         className={
           isHamburger
@@ -33,8 +33,8 @@ const HeaderLinkGroup = ({
               <Trigger>
                 <li>
                   <Link
-                    className={`hover:text-secondary descriptionText uppercase text-lighterBlack tracking-wider ${
-                      isHamburger ? 'hover:text-secondary' : 'px-3'
+                    className={`hoverLinks hover:text-secondary ${
+                      isHamburger ? "hover:text-secondary" : "px-3"
                     }`}
                     href={link}
                   >
@@ -43,13 +43,13 @@ const HeaderLinkGroup = ({
                 </li>
               </Trigger>
               <Content>
-                <ul className="descriptionText bg-bodyBg max-w-full absolute top-0 hidden flex-col rounded-lg ">
+                <ul className="descriptionText bg-bodyBg absolute top-0 hidden flex-col rounded-lg lg:top-8 lg:flex">
                   {subLinks.map(
                     ({ subLink, subTitle }, index: number): JSX.Element => (
                       <li key={`${subLink}-${index}`} className="py-1">
                         <Link
-                          className={`link link-underline link-underline-black text-lighterBlack delay-2000${
-                            isHamburger ? 'hover:text-secondary' : 'px-3'
+                          className={`hoverLinks ${
+                            isHamburger ? "hover:text-secondary" : "px-3"
                           }`}
                           href={subLink}
                         >

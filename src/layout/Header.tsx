@@ -47,12 +47,11 @@ const Header = (): JSX.Element => {
 
   return (
     <>
-      <header className="containerSpacing absolute top-0 z-10 flex h-16 w-full border-b bg-bodyBg items-center py-0 text-black 2xl:px-32">
+      <header className="containerSpacing absolute top-0 z-10 flex h-16 w-full items-center py-0 text-header backdrop-blur-lg 2xl:px-32">
         <nav className="descriptionText flex w-full justify-between">
           <Logo whiteHover={true} />
-
           {windowWidth >= 1024 ? (
-            <div className="flex w-3/4 items-center justify-between ">
+            <div className="flex w-3/4 items-center justify-between">
               <HeaderLinkGroup
                 links={[
                   {

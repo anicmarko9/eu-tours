@@ -27,20 +27,20 @@ const SignIn: NextPage = () => {
           </p>
 
           <div className=" mx-auto">
-            <button
-              onClick={() => void signIn('github', { callbackUrl: '/' })}
-              className=" text-white bg-[#1C2128]  md:px-5 py-2 md:py-3 my-2 border-b rounded-full hoverButton hover:text-bodyBg flex items-center"
-            >
-              <FaGithub size={32} className="inline-block mr-2" />
-              <span>Sign in with GitHub</span>
-            </button>
-            <button
-              onClick={() => void signIn('google', { callbackUrl: '/' })}
-              className="text-white bg-[#DB4437] px-4 md:px-5 py-2 md:py-3 my-2 border-b rounded-full hoverButton hover:text-bodyBg flex items-center"
-            >
-              <FaGoogle size={32} className="inline-block mr-2" />
-              <span>Sign in with Google</span>
-            </button>
+          <button
+            onClick={() => void signIn("github", { callbackUrl: "/" })}
+            className=" text-white bg-[#1C2128] px-4 md:px-5 py-2 md:py-3 my-2 border-b rounded-full hoverButton hover:text-bodyBg flex items-center"
+          >
+            <FaGithub size={32} className="inline-block mr-2" />
+            <span>Sign in with GitHub</span>
+          </button>
+          <button
+            onClick={() => void signIn("google", { callbackUrl: "/" })}
+            className="text-white bg-[#DB4437] px-4 md:px-5 py-2 md:py-3 my-2 border-b rounded-full hoverButton hover:text-bodyBg flex items-center"
+          >
+            <FaGoogle size={32} className="inline-block mr-2" />
+            <span>Sign in with Google</span>
+          </button>
           </div>
         </div>
       </div>

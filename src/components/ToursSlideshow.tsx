@@ -28,9 +28,9 @@ const ToursSlideshow = (): JSX.Element => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      <div className="containerSpacing relative flex h-full w-full flex-wrap space-x-0 text-lighterBlack lg:flex-nowrap lg:space-x-16">
-        <div className="order-last flex h-[70%] w-full flex-col justify-center lg:order-first lg:h-full lg:w-4/5 2xl:w-[45%] gap-8">
-          <div className="flex h-full w-full lg:h-4/5 lg:items-center transition-all ease-in-out duration-1000">
+      <div className="containerSpacing  relative flex h-full w-full flex-wrap space-x-0 text-lighterBlack lg:flex-nowrap lg:space-x-16">
+        <div className="order-last flex h-[70%] w-full flex-col gap-0 justify-center lg:order-first lg:h-full lg:w-4/5 2xl:w-[45%] lg:gap-4">
+          <div className="flex lg:h-4/5 lg:items-center transition-all ease-in-out duration-1000">
             {tours.map((tour, index) => (
               <Tour
                 key={tour.tourName}
@@ -48,7 +48,7 @@ const ToursSlideshow = (): JSX.Element => {
               />
             ))}
           </div>
-          <div className="descriptionText flex w-full justify-center space-x-4  lg:w-full lg:justify-end">
+          <div className="descriptionText flex w-full justify-center space-x-4 lg:w-full lg:justify-end">
             <div className="arrowContainer" onClick={handlePrevTour}>
               <IoIosArrowBack className="inline" />
             </div>
