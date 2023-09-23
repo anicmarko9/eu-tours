@@ -22,10 +22,13 @@
     @apply bg-white bg-gradient-to-r from-darkerBlack to-lighterBlack font-bold transition-all duration-200 ease-in hover:border-primary hover:bg-white hover:bg-none hover:text-primary;
   }
   .hoverEffect {
-    @apply transition-all duration-200 ease-in hover:shadow-sm;
+    @apply transition-all duration-200 ease-in ;
   }
   .hoverButton {
     @apply transition-all duration-200 ease-in hover:bg-secondary;
+  }
+  .hoverLinks{
+    @apply transition-all duration-200 ease-in hover:text-secondary;
   }
   .closeBtn {
     @apply h-8 w-8 cursor-pointer rounded-full text-secondary transition-all duration-200 ease-in hover:bg-secondary hover:text-white;
@@ -61,23 +64,23 @@
 }
 
 
-.link-underline {
-  border-bottom-width: 0;
-  margin-top: 4em;
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
-  background-size: 0 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size .5s ease-in-out;
-}
+// .link-underline {
+//   border-bottom-width: 0;
+//   margin-top: 4em;
+//   background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+//   background-size: 0 1px;
+//   background-position: 0 100%;
+//   background-repeat: no-repeat;
+//   transition: background-size .5s ease-in-out;
+// }
 
-.link-underline-black {
-  margin-top: 4em;
-  background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(49, 48, 49), rgb(59, 58, 59))
-}
+// .link-underline-black {
+//   margin-top: 4em;
+//   background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(49, 48, 49), rgb(59, 58, 59))
+// }
 
-.link-underline:hover {
+// .link-underline:hover {
   
-  background-size: 100% 1px;
-  background-position: 0 100%
-}
+//   background-size: 100% 1px;
+//   background-position: 0 100%
+// }
