@@ -1,5 +1,5 @@
-import type { Session } from "next-auth";
-import Image from "next/image";
+import type { Session } from 'next-auth';
+import Image from 'next/image';
 
 const UserAvatar = ({ session }: { session: Session | null }): JSX.Element => {
   return (

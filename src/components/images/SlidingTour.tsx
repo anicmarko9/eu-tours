@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 const SlidingTour = ({ src }: { src: string }): JSX.Element => {
   return (
     <figure className="rounded-lg">

@@ -1,6 +1,6 @@
-import { SelectionType } from "src/types/types";
-import LocationOrDate from "./LocationOrDate";
-import PrimaryBtn from "./PrimaryBtn";
+import { SelectionType } from 'src/types/types';
+import LocationOrDate from './LocationOrDate';
+import PrimaryBtn from './PrimaryBtn';
 
 const SearchBar = (): JSX.Element => {
   return (

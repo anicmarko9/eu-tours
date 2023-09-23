@@ -1,5 +1,5 @@
-import { IoIosArrowDown } from "react-icons/io";
-import type { SelectionType } from "src/types/types";
+import { IoIosArrowDown } from 'react-icons/io';
+import type { SelectionType } from 'src/types/types';
 
 const LocationOrDate = ({
   choose,
@@ -18,7 +18,7 @@ const LocationOrDate = ({
           <IoIosArrowDown className="hoverEffect inline text-secondary" />
         </h2>
         <h2 className="text-lighterBlack">
-          {choose === "Location" ? (
+          {choose === 'Location' ? (
             location
           ) : (
             <time dateTime="2023-09-16">{date}</time>

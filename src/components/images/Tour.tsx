@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { slugifyString } from "src/helper/helper";
-import TourRating from "../tools/TourRating";
-import SlidingTour from "./SlidingTour";
+import { useState, useEffect } from 'react';
+import { slugifyString } from 'src/helper/helper';
+import TourRating from '../tools/TourRating';
+import SlidingTour from './SlidingTour';
 
 const Tour = ({
   tourName,

@@ -1,11 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
 import {
   Root,
   List,
   Item,
   Trigger,
   Content,
-} from "@radix-ui/react-navigation-menu";
+} from '@radix-ui/react-navigation-menu';
 
 const HeaderLinkGroup = ({
   links,
@@ -19,12 +19,12 @@ const HeaderLinkGroup = ({
   isHamburger?: boolean;
 }): JSX.Element => {
   return (
-    <Root className={`buttonText ${isHamburger ? "titleText" : "w-2/3"}`}>
+    <Root className={`buttonText ${isHamburger ? 'titleText' : 'w-2/3'}`}>
       <List
         className={
           isHamburger
-            ? "flex w-full flex-col space-y-4"
-            : "flex w-full items-center justify-between"
+            ? 'flex w-full flex-col space-y-4'
+            : 'flex w-full items-center justify-between'
         }
       >
         {links.map(
@@ -34,7 +34,7 @@ const HeaderLinkGroup = ({
                 <li>
                   <Link
                     className={`hover:text-secondary descriptionText uppercase text-lighterBlack tracking-wider ${
-                      isHamburger ? "hover:text-secondary" : "px-3"
+                      isHamburger ? 'hover:text-secondary' : 'px-3'
                     }`}
                     href={link}
                   >
@@ -49,7 +49,7 @@ const HeaderLinkGroup = ({
                       <li key={`${subLink}-${index}`} className="py-1">
                         <Link
                           className={`link link-underline link-underline-black text-lighterBlack delay-2000${
-                            isHamburger ? "hover:text-secondary" : "px-3"
+                            isHamburger ? 'hover:text-secondary' : 'px-3'
                           }`}
                           href={subLink}
                         >

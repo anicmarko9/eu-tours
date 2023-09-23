@@ -1,7 +1,8 @@
-import type { user } from "@prisma/client";
-import { verifyEmail } from "src/server/services/email.service";
-import { sendVerificationEmail } from "src/server/services/email.service";
-import { createTRPCRouter, protectedProcedure } from "../trpc";
+import type { user } from '@prisma/client';
+
+import { verifyEmail } from 'src/server/services/email.service';
+import { sendVerificationEmail } from 'src/server/services/email.service';
+import { createTRPCRouter, protectedProcedure } from '../trpc';
 
 export const emailRouter = createTRPCRouter({
   sendEmail: protectedProcedure.mutation(

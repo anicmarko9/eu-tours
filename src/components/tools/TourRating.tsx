@@ -1,4 +1,4 @@
-import { ImStarFull, ImStarHalf, ImStarEmpty } from "react-icons/im";
+import { ImStarFull, ImStarHalf, ImStarEmpty } from 'react-icons/im';
 
 const TourRating = ({ rating }: { rating: number }): JSX.Element => {
   const starIcons: JSX.Element[] = [];

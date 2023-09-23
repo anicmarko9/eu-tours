@@ -1,6 +1,5 @@
 #EU Tours
 
-
 ## Overview
 
 This Full Stack application allows users to book tours around the European Union. It provides a user-friendly interface for browsing and booking tours while utilizing modern web development technologies on both the backend and frontend.
@@ -55,5 +54,3 @@ This Full Stack application allows users to book tours around the European Union
 - Email service with SendGrid for production, and MailTrap for development
 - Unit Testing, end-to-end Testing
 - Dockerized Image
-
-

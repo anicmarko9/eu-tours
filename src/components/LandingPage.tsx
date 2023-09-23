@@ -1,5 +1,5 @@
-import SearchBar from "./tools/SearchBar";
-import Slider from "./images/Slider";
+import SearchBar from './tools/SearchBar';
+import Slider from './images/Slider';
 
 const LandingPage = (): JSX.Element => {
   return (
@@ -8,7 +8,7 @@ const LandingPage = (): JSX.Element => {
         <header className="max-w-xl mb-10 md:mx-auto text-center my-16 sm:text-center lg:max-w-2xl md:mb-12">
           <div className="max-w-md font-sans text-5xl leading-none text-lighter  md:mx-auto">
             <h2 className="relative inline-block  tracking-tight ">
-              A world away in the regions of{" "}
+              A world away in the regions of{' '}
               <span className="relative">Europe</span>
             </h2>
             <p className="descriptionText text-base text-gray-500 md:text-lg  mt-2 mb-6">

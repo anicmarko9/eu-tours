@@ -1,8 +1,8 @@
-import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
-import { type Session } from "next-auth";
+import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
+import { type Session } from 'next-auth';
 
-import { getServerAuthSession } from "../auth";
-import { prisma } from "../db";
+import { getServerAuthSession } from '../auth';
+import { prisma } from '../db';
 
 type CreateContextOptions = {
   session: Session | null;
@@ -23,8 +23,8 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
   });
 };
 
-import { initTRPC, TRPCError } from "@trpc/server";
-import superjson from "superjson";
+import { initTRPC, TRPCError } from '@trpc/server';
+import superjson from 'superjson';
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
@@ -38,7 +38,7 @@ export const publicProcedure = t.procedure;
 
 const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
   if (!ctx.session || !ctx.session.user) {
-    throw new TRPCError({ code: "UNAUTHORIZED" });
+    throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
   return next({
     ctx: {

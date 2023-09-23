@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const JourneyImage = ({ isMobile }: { isMobile: boolean }): JSX.Element => {
   return isMobile ? (
@@ -9,7 +9,7 @@ const JourneyImage = ({ isMobile }: { isMobile: boolean }): JSX.Element => {
         width={250}
         height={250}
         placeholder="blur"
-        blurDataURL={"/images/journey.png"}
+        blurDataURL={'/images/journey.png'}
         loading="eager"
       />
     </figure>
@@ -21,7 +21,7 @@ const JourneyImage = ({ isMobile }: { isMobile: boolean }): JSX.Element => {
         width={500}
         height={500}
         placeholder="blur"
-        blurDataURL={"/images/journey.png"}
+        blurDataURL={'/images/journey.png'}
         loading="eager"
         className="w-full"
       />

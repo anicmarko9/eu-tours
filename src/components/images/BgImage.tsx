@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const BgImage = ({ src }: { src: string }): JSX.Element => {
   return (
