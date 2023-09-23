@@ -1,6 +1,7 @@
-import type { user } from "@prisma/client";
-import nodemailer from "nodemailer";
-import { prisma } from "./../db";
+import type { user } from '@prisma/client';
+import nodemailer from 'nodemailer';
+
+import { prisma } from '@Server/db';
 
 export const sendVerificationEmail = async (user: user): Promise<void> => {
   try {
@@ -15,14 +16,14 @@ export const sendVerificationEmail = async (user: user): Promise<void> => {
     const message = {
       from: process.env.EMAIL_FROM as string,
       to: user.email,
-      subject: "Verify your email address",
+      subject: 'Verify your email address',
       text: `Please click the following link to verify your email address: ${
         process.env.NEXTAUTH_URL as string
       }/auth/verify-email?id=${user.id}`,
     };
     await transport.sendMail(message);
   } catch (err) {
-    throw new Error("Technical difficulties with email operator.");
+    throw new Error('Technical difficulties with email operator.');
   }
 };
 

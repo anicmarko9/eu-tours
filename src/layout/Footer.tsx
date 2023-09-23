@@ -1,6 +1,7 @@
-import Link from "next/link";
-import FooterLinkGroup from "../components/links/FooterLinkGroup";
-import Logo from "src/components/images/Logo";
+import Link from 'next/link';
+
+import FooterLinkGroup from '@Components/links/FooterLinkGroup';
+import Logo from '@Components/images/Logo';
 
 const Footer = (): JSX.Element => {
   return (
@@ -18,32 +19,32 @@ const Footer = (): JSX.Element => {
           <FooterLinkGroup
             title="Discover"
             links={[
-              { link: "#", text: "Why EU Tours" },
-              { link: "#", text: "Support Us" },
+              { link: '#', text: 'Why EU Tours' },
+              { link: '#', text: 'Support Us' },
             ]}
           />
           <FooterLinkGroup
             title="Services"
             links={[
-              { link: "#", text: "FAQs" },
-              { link: "#", text: "Support Center" },
-              { link: "#", text: "Contact Us" },
+              { link: '#', text: 'FAQs' },
+              { link: '#', text: 'Support Center' },
+              { link: '#', text: 'Contact Us' },
             ]}
           />
           <FooterLinkGroup
             title="Community"
             links={[
-              { link: "#", text: "Capital" },
-              { link: "#", text: "Security" },
-              { link: "#", text: "News and Blogs" },
+              { link: '#', text: 'Capital' },
+              { link: '#', text: 'Security' },
+              { link: '#', text: 'News and Blogs' },
             ]}
           />
           <FooterLinkGroup
             title="About"
             links={[
-              { link: "#", text: "About Us" },
-              { link: "#", text: "Features" },
-              { link: "#", text: "Reviews" },
+              { link: '#', text: 'About Us' },
+              { link: '#', text: 'Features' },
+              { link: '#', text: 'Reviews' },
             ]}
           />
         </nav>

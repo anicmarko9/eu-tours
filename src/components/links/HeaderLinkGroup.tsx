@@ -1,11 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
 import {
   Root,
   List,
   Item,
   Trigger,
   Content,
-} from "@radix-ui/react-navigation-menu";
+} from '@radix-ui/react-navigation-menu';
 
 const HeaderLinkGroup = ({
   links,
@@ -23,8 +23,8 @@ const HeaderLinkGroup = ({
       <List
         className={
           isHamburger
-            ? "flex w-full flex-col space-y-4"
-            : "flex w-full items-center justify-between"
+            ? 'flex w-full flex-col space-y-4'
+            : 'flex w-full items-center justify-between'
         }
       >
         {links.map(

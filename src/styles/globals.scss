@@ -54,15 +54,18 @@
   .arrowContainer {
     @apply flex cursor-pointer items-center justify-center rounded-full p-4  hover:bg-secondary text-xl text-white shadow-2xl transition-all duration-200 ease-in bg-lighterBlack  lg:text-2xl;
   }
-  .carouselIMg{
-    @apply  float-left w-[500px] h-[100%] object-cover lg:w-[900px]
+  .carouselIMg {
+    @apply float-left w-[500px] h-[100%] object-cover lg:w-[900px];
   }
-  h1,h2,h3,h4,h5,h6{
-    @apply font-Forum
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-Forum;
   }
-  
 }
-
 
 // .link-underline {
 //   border-bottom-width: 0;

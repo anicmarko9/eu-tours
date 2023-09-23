@@ -1,16 +1,17 @@
-import { signIn, signOut, useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import HamburgerMenu from "src/components/tools/HamburgerMenu";
-import Logo from "src/components/images/Logo";
-import UserAvatar from "src/components/images/UserAvatar";
-import { AuthType } from "src/types/types";
-import PrimaryBtn from "src/components/tools/PrimaryBtn";
-import HeaderLinkGroup from "src/components/links/HeaderLinkGroup";
+import { useEffect, useState } from 'react';
+import { signIn, signOut, useSession } from 'next-auth/react';
+import { RxHamburgerMenu } from 'react-icons/rx';
+
+import HamburgerMenu from '@Components/tools/HamburgerMenu';
+import Logo from '@Components/images/Logo';
+import UserAvatar from '@Components/images/UserAvatar';
+import { AuthType } from '@Types/types';
+import PrimaryBtn from '@Components/tools/PrimaryBtn';
+import HeaderLinkGroup from '@Components/links/HeaderLinkGroup';
 
 const Header = (): JSX.Element => {
   const { data: session, status } = useSession<boolean>();
-  const loading: boolean = status === "loading";
+  const loading: boolean = status === 'loading';
 
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -29,17 +30,17 @@ const Header = (): JSX.Element => {
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       // Access the window object and set the initial window width
       setWindowWidth(window.innerWidth);
       // Add an event listener to update the window width on resize
       const handleResize = () => {
         setWindowWidth(window.innerWidth);
       };
-      window.addEventListener("resize", handleResize);
+      window.addEventListener('resize', handleResize);
       // Clean up the event listener on component unmount
       return () => {
-        window.removeEventListener("resize", handleResize);
+        window.removeEventListener('resize', handleResize);
       };
     }
   }, []);
@@ -54,38 +55,38 @@ const Header = (): JSX.Element => {
               <HeaderLinkGroup
                 links={[
                   {
-                    link: "/about-us",
-                    text: "Discover",
+                    link: '/about-us',
+                    text: 'Discover',
                     subLinks: [
-                      { subLink: "#", subTitle: "Why EU Tours" },
-                      { subLink: "#", subTitle: "Support Us" },
+                      { subLink: '#', subTitle: 'Why EU Tours' },
+                      { subLink: '#', subTitle: 'Support Us' },
                     ],
                   },
                   {
-                    link: "/bookings",
-                    text: "Services",
+                    link: '/bookings',
+                    text: 'Services',
                     subLinks: [
-                      { subLink: "#", subTitle: "FAQs" },
-                      { subLink: "#", subTitle: "Support Center" },
-                      { subLink: "#", subTitle: "Contact Us" },
+                      { subLink: '#', subTitle: 'FAQs' },
+                      { subLink: '#', subTitle: 'Support Center' },
+                      { subLink: '#', subTitle: 'Contact Us' },
                     ],
                   },
                   {
-                    link: "/community",
-                    text: "Community",
+                    link: '/community',
+                    text: 'Community',
                     subLinks: [
-                      { subLink: "#", subTitle: "Capital" },
-                      { subLink: "#", subTitle: "Security" },
-                      { subLink: "#", subTitle: "News and Blogs" },
+                      { subLink: '#', subTitle: 'Capital' },
+                      { subLink: '#', subTitle: 'Security' },
+                      { subLink: '#', subTitle: 'News and Blogs' },
                     ],
                   },
                   {
-                    link: "/about",
-                    text: "About Us",
+                    link: '/about',
+                    text: 'About Us',
                     subLinks: [
-                      { subLink: "#", subTitle: "About Us" },
-                      { subLink: "#", subTitle: "Features" },
-                      { subLink: "#", subTitle: "Reviews" },
+                      { subLink: '#', subTitle: 'About Us' },
+                      { subLink: '#', subTitle: 'Features' },
+                      { subLink: '#', subTitle: 'Reviews' },
                     ],
                   },
                 ]}
