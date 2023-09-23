@@ -12,7 +12,6 @@ const LocationOrDate = ({
 }): JSX.Element => {
   return (
     <div className="flex items-left space-x-4 sm:w-fit">
-      
       <div className="hoverEffect cursor-pointer">
         <h2 className="space-x-2">
           <span>{choose}</span>

@@ -66,7 +66,6 @@ const ToursSlideshow = (): JSX.Element => {
             escape for nature enthusiasts and adventure seekers alike.
             <PrimaryBtn text="Book" />
           </p>
-         
         </section>
       </div>
     </section>

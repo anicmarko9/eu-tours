@@ -1,4 +1,3 @@
-
 import { type NextRouter, useRouter } from "next/router";
 
 const Logo = ({ whiteHover }: { whiteHover?: boolean }): JSX.Element => {
@@ -13,7 +12,6 @@ const Logo = ({ whiteHover }: { whiteHover?: boolean }): JSX.Element => {
       } cursor-pointer items-center justify-start`}
       onClick={handleClick}
     >
-      
       <figcaption
         className={`logoText text-black ${
           whiteHover ? "hover:text-black" : "hover:text-black"

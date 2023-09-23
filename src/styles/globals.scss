@@ -51,33 +51,37 @@
   .arrowContainer {
     @apply flex cursor-pointer items-center justify-center rounded-full p-4  hover:bg-secondary text-xl text-white shadow-2xl transition-all duration-200 ease-in bg-lighterBlack  lg:text-2xl;
   }
-  .carouselIMg{
-    @apply  float-left w-[500px] h-[100%] object-cover lg:w-[900px]
+  .carouselIMg {
+    @apply float-left w-[500px] h-[100%] object-cover lg:w-[900px];
   }
-  h1,h2,h3,h4,h5,h6{
-    @apply font-Forum
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-Forum;
   }
-  
 }
-
 
 .link-underline {
   border-bottom-width: 0;
   margin-top: 4em;
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
   background-size: 0 1px;
   background-position: 0 100%;
   background-repeat: no-repeat;
-  transition: background-size .5s ease-in-out;
+  transition: background-size 0.5s ease-in-out;
 }
 
 .link-underline-black {
   margin-top: 4em;
-  background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(49, 48, 49), rgb(59, 58, 59))
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(rgb(49, 48, 49), rgb(59, 58, 59));
 }
 
 .link-underline:hover {
-  
   background-size: 100% 1px;
-  background-position: 0 100%
+  background-position: 0 100%;
 }

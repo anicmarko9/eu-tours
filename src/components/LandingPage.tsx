@@ -1,10 +1,7 @@
-
 import SearchBar from "./tools/SearchBar";
 import Slider from "./images/Slider";
 
-
-const LandingPage = (): JSX.Element =>
-{
+const LandingPage = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center justify-center px-4 pt-16 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:pt- md:px-0">
       <main className="flex flex-col items-center max-w-2xl md:px-8">
@@ -15,16 +12,16 @@ const LandingPage = (): JSX.Element =>
               <span className="relative">Europe</span>
             </h2>
             <p className="descriptionText text-base text-gray-500 md:text-lg  mt-2 mb-6">
-            Europe&apos;s Treasures, Your Stories
-          </p>
+              Europe&apos;s Treasures, Your Stories
+            </p>
           </div>
           <div className="w-fit mx-auto border-b border-t">
-            <SearchBar/>
+            <SearchBar />
           </div>
         </header>
       </main>
       <div className="-mt-32 lg:-mt-50">
-        <Slider/>
+        <Slider />
       </div>
     </section>
   );
