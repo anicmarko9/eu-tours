@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import FooterLinkGroup from '../components/links/FooterLinkGroup';
-import Logo from 'src/components/images/Logo';
+import FooterLinkGroup from '@Components/links/FooterLinkGroup';
+import Logo from '@Components/images/Logo';
 
 const Footer = (): JSX.Element => {
   return (

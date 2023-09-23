@@ -1,7 +1,7 @@
 import type { user } from '@prisma/client';
 import nodemailer from 'nodemailer';
 
-import { prisma } from './../db';
+import { prisma } from '@Server/db';
 
 export const sendVerificationEmail = async (user: user): Promise<void> => {
   try {
