@@ -1,4 +1,5 @@
 import { IoIosArrowDown } from 'react-icons/io';
+
 import type { SelectionType } from 'src/types/types';
 
 const LocationOrDate = ({
