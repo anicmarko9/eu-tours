@@ -44,4 +44,60 @@ model user {
   image         String?   @default("https://res.cloudinary.com/dfptc3ila/image/upload/v1672134561/default_hmbqah.jpg")
   accounts      account[]
   sessions      session[]
+  tourId        String?
+  tour          tour?     @relation(fields: [tourId], references: [id])
+}
+
+enum difficulty {
+  easy
+  medium
+  difficult
+}
+
+model tour {
+  id              String        @id @default(uuid())
+  name            String        @unique
+  slug            String?
+  duration        Float
+  maxGroupSize    Int
+  difficulty      difficulty
+  ratingsAverage  Float         @default(4.5)
+  ratingsQuantity Int           @default(0)
+  price           Float
+  priceDiscount   Float?
+  summary         String
+  description     String?
+  imageCover      String
+  images          String[]
+  createdAt       DateTime      @default(now())
+  startDates      DateTime[]
+  secretTour      Boolean       @default(false)
+  startLocationId String        @unique
+  startLocation   startLocation @relation(fields: [startLocationId], references: [id])
+  locations       location[]
+  guides          user[]
+}
+
+enum geojson {
+  point
+}
+
+model startLocation {
+  id          String  @id @default(uuid())
+  type        geojson @default(point)
+  coordinates Float[]
+  address     String
+  description String
+  tour        tour?
+}
+
+model location {
+  id          String  @id @default(uuid())
+  type        geojson @default(point)
+  coordinates Float[]
+  address     String
+  description String
+  day         Int
+  tourId      String  @unique
+  tour        tour    @relation(fields: [tourId], references: [id])
 }
