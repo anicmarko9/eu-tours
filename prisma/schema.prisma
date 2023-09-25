@@ -46,6 +46,7 @@ model user {
   sessions      session[]
   tourId        String?
   tour          tour?     @relation(fields: [tourId], references: [id])
+  review        review?
 }
 
 enum difficulty {
@@ -76,6 +77,7 @@ model tour {
   startLocation   startLocation @relation(fields: [startLocationId], references: [id])
   locations       location[]
   guides          user[]
+  review          review[]
 }
 
 enum geojson {
@@ -100,4 +102,15 @@ model location {
   day         Int
   tourId      String  @unique
   tour        tour    @relation(fields: [tourId], references: [id])
+}
+
+model review {
+  id        String   @id @default(uuid())
+  review    String
+  rating    Float
+  createdAt DateTime @default(now())
+  tour      tour     @relation(fields: [tourId], references: [id])
+  tourId    String   @unique
+  user      user     @relation(fields: [userId], references: [id])
+  userId    String   @unique
 }
