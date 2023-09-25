@@ -47,6 +47,7 @@ model user {
   tourId        String?
   tour          tour?     @relation(fields: [tourId], references: [id])
   review        review?
+  Booking       Booking[]
 }
 
 enum difficulty {
@@ -78,6 +79,7 @@ model tour {
   locations       location[]
   guides          user[]
   review          review[]
+  Booking         Booking[]
 }
 
 enum geojson {
@@ -113,4 +115,15 @@ model review {
   tourId    String   @unique
   user      user     @relation(fields: [userId], references: [id])
   userId    String   @unique
+}
+
+model Booking {
+  id        String   @id @default(uuid())
+  tour      tour     @relation(fields: [tourId], references: [id])
+  tourId    String   @unique
+  user      user     @relation(fields: [userId], references: [id])
+  userId    String   @unique
+  price     Float
+  createdAt DateTime @default(now())
+  paid      Boolean  @default(true)
 }
