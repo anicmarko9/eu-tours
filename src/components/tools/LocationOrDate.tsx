@@ -1,24 +1,30 @@
+import { SlLocationPin } from 'react-icons/sl';
 import { IoIosArrowDown } from 'react-icons/io';
-
-import type { SelectionType } from '@Types/types';
+import { MdOutlineCalendarMonth } from 'react-icons/md';
+import type { SelectionType } from 'src/types/types';
 
 const LocationOrDate = ({
   choose,
   location,
-  date,
+  date
 }: {
   choose: SelectionType;
   location?: string;
   date?: string;
 }): JSX.Element => {
   return (
-    <div className="flex items-left space-x-4 sm:w-fit">
+    <div className="flex items-center space-x-4 sm:w-fit">
+      {choose === 'Location' ? (
+        <SlLocationPin className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
+      ) : (
+        <MdOutlineCalendarMonth className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
+      )}
       <div className="hoverEffect cursor-pointer">
         <h2 className="space-x-2">
           <span>{choose}</span>
           <IoIosArrowDown className="hoverEffect inline text-secondary" />
         </h2>
-        <h2 className="text-lighterBlack">
+        <h2 className="text-white">
           {choose === 'Location' ? (
             location
           ) : (

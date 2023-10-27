@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { IoClose } from 'react-icons/io5';
-import type { BuiltInProviderType } from 'next-auth/providers';
-import type { Session } from 'next-auth';
+import { getEmailUsername } from 'src/helper/helper';
 import type {
   LiteralUnion,
   SignInAuthorizationParams,
   SignInOptions,
-  SignOutParams,
+  SignOutParams
 } from 'next-auth/react/types';
-
-import Logo from '@Components/images/Logo';
-import UserAvatar from '@Components/images/UserAvatar';
-import HeaderLinkGroup from '@Components/links/HeaderLinkGroup';
+import type { BuiltInProviderType } from 'next-auth/providers';
+import Logo from '../images/Logo';
+import HeaderLinkGroup from '../links/HeaderLinkGroup';
+import type { Session } from 'next-auth';
+import UserAvatar from '../images/UserAvatar';
+import { AuthType } from 'src/types/types';
 import PrimaryBtn from './PrimaryBtn';
-import { getEmailUsername } from '@Helper/helper';
-import { AuthType } from '@Types/types';
 
 const BurgerMenu = ({
   toggleMenu,
   isMenuOpen,
   isMenuOpenLate,
-  session,
+  session
 }: {
   toggleMenu: () => void;
   isMenuOpen: boolean;
@@ -30,7 +29,7 @@ const BurgerMenu = ({
   signIn: (
     provider?: LiteralUnion<BuiltInProviderType> | undefined,
     options?: SignInOptions | undefined,
-    authorizationParams?: SignInAuthorizationParams | undefined,
+    authorizationParams?: SignInAuthorizationParams | undefined
   ) => Promise<unknown>;
 }): JSX.Element => {
   // Props are passed from "Header" component.
@@ -74,8 +73,8 @@ const BurgerMenu = ({
               text: 'Discover',
               subLinks: [
                 { subLink: '#', subTitle: 'Why EU Tours' },
-                { subLink: '#', subTitle: 'Support Us' },
-              ],
+                { subLink: '#', subTitle: 'Support Us' }
+              ]
             },
             {
               link: '/bookings',
@@ -83,8 +82,8 @@ const BurgerMenu = ({
               subLinks: [
                 { subLink: '#', subTitle: 'FAQs' },
                 { subLink: '#', subTitle: 'Support Center' },
-                { subLink: '#', subTitle: 'Contact Us' },
-              ],
+                { subLink: '#', subTitle: 'Contact Us' }
+              ]
             },
             {
               link: '/community',
@@ -92,8 +91,8 @@ const BurgerMenu = ({
               subLinks: [
                 { subLink: '#', subTitle: 'Capital' },
                 { subLink: '#', subTitle: 'Security' },
-                { subLink: '#', subTitle: 'News and Blogs' },
-              ],
+                { subLink: '#', subTitle: 'News and Blogs' }
+              ]
             },
             {
               link: '/about',
@@ -101,9 +100,9 @@ const BurgerMenu = ({
               subLinks: [
                 { subLink: '#', subTitle: 'About Us' },
                 { subLink: '#', subTitle: 'Features' },
-                { subLink: '#', subTitle: 'Reviews' },
-              ],
-            },
+                { subLink: '#', subTitle: 'Reviews' }
+              ]
+            }
           ]}
           isHamburger={true}
         />

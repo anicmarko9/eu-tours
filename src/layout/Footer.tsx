@@ -1,7 +1,6 @@
 import Link from 'next/link';
-
-import FooterLinkGroup from '@Components/links/FooterLinkGroup';
-import Logo from '@Components/images/Logo';
+import FooterLinkGroup from '../components/links/FooterLinkGroup';
+import Logo from 'src/components/images/Logo';
 
 const Footer = (): JSX.Element => {
   return (
@@ -20,7 +19,7 @@ const Footer = (): JSX.Element => {
             title="Discover"
             links={[
               { link: '#', text: 'Why EU Tours' },
-              { link: '#', text: 'Support Us' },
+              { link: '#', text: 'Support Us' }
             ]}
           />
           <FooterLinkGroup
@@ -28,7 +27,7 @@ const Footer = (): JSX.Element => {
             links={[
               { link: '#', text: 'FAQs' },
               { link: '#', text: 'Support Center' },
-              { link: '#', text: 'Contact Us' },
+              { link: '#', text: 'Contact Us' }
             ]}
           />
           <FooterLinkGroup
@@ -36,7 +35,7 @@ const Footer = (): JSX.Element => {
             links={[
               { link: '#', text: 'Capital' },
               { link: '#', text: 'Security' },
-              { link: '#', text: 'News and Blogs' },
+              { link: '#', text: 'News and Blogs' }
             ]}
           />
           <FooterLinkGroup
@@ -44,7 +43,7 @@ const Footer = (): JSX.Element => {
             links={[
               { link: '#', text: 'About Us' },
               { link: '#', text: 'Features' },
-              { link: '#', text: 'Reviews' },
+              { link: '#', text: 'Reviews' }
             ]}
           />
         </nav>

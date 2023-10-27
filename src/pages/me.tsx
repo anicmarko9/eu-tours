@@ -1,8 +1,7 @@
 import type { NextPage } from 'next';
 import React from 'react';
+import { api } from 'src/utils/api';
 import { toast } from 'react-toastify';
-
-import { api } from '@Utils/api';
 
 const UserSettingsPage: NextPage = () => {
   const verifyEmail = api.email.verifyEmail.useMutation();
@@ -11,11 +10,11 @@ const UserSettingsPage: NextPage = () => {
     try {
       await verifyEmail.mutateAsync();
       toast.success('Account verified.', {
-        position: 'bottom-left',
+        position: 'bottom-left'
       });
     } catch (err) {
       toast.error("Account doesn't exist.", {
-        position: 'bottom-left',
+        position: 'bottom-left'
       });
     }
   };

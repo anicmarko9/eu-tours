@@ -18,11 +18,11 @@ const LoginSchema = z.object({
     .string()
     .email({ message: 'Invalid format for email address.' })
     .max(50, 'Please provide shorter email address.'),
-  password: z.string().min(8, 'Password must be at least 8 characters long.'),
+  password: z.string().min(8, 'Password must be at least 8 characters long.')
 });
 
 export const validateLogin = (
-  input: unknown,
+  input: unknown
 ): {
   email: string;
   password: string;
@@ -53,11 +53,11 @@ const RegisterSchema = z.object({
   password: z.string().min(8, 'Password must be at least 8 characters long.'),
   passwordConfirm: z
     .string()
-    .min(8, 'Confirmed password must be at least 8 characters long.'),
+    .min(8, 'Confirmed password must be at least 8 characters long.')
 });
 
 export const validateRegister = (
-  input: unknown,
+  input: unknown
 ): {
   name: string;
   email: string;

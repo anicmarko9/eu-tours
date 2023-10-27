@@ -1,9 +1,9 @@
 export enum SelectionType {
   Location = 'Location',
-  Date = 'Date',
+  Date = 'Date'
 }
 
 export enum AuthType {
   SignIn = 'Sign In',
-  SignOut = 'Sign Out',
+  SignOut = 'Sign Out'
 }

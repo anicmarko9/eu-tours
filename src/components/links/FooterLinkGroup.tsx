@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const FooterLinkGroup = ({
   title,
-  links,
+  links
 }: {
   title: string;
   links: { link: string; text: string }[];
@@ -20,7 +20,7 @@ const FooterLinkGroup = ({
                 {text}
               </Link>
             </li>
-          ),
+          )
         )}
       </ul>
     </section>

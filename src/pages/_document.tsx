@@ -4,10 +4,8 @@ export default function Document() {
   return (
     <Html lang="en" className="font-montserrat">
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Forum&family=Poppins:wght@100;200;300;400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
           rel="stylesheet"
         />
         <meta
