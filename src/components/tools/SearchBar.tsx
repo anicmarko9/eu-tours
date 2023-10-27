@@ -1,4 +1,4 @@
-import { SelectionType } from '@Types/types';
+import { SelectionType } from 'src/types/types';
 import LocationOrDate from './LocationOrDate';
 import PrimaryBtn from './PrimaryBtn';
 

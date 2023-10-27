@@ -3,7 +3,7 @@ import { createTRPCNext } from '@trpc/next';
 import { type inferRouterInputs, type inferRouterOutputs } from '@trpc/server';
 import superjson from 'superjson';
 
-import { type AppRouter } from '@Server/api/root';
+import { type AppRouter } from '../server/api/root';
 
 const getBaseUrl = () => {
   if (typeof window !== 'undefined') return '';
@@ -17,16 +17,16 @@ export const api = createTRPCNext<AppRouter>({
       queryClientConfig: {
         defaultOptions: {
           queries: {
-            refetchOnWindowFocus: false,
-          },
-        },
+            refetchOnWindowFocus: false
+          }
+        }
       },
       transformer: superjson,
       links: [
         loggerLink({
           enabled: (opts) =>
             process.env.NODE_ENV === 'development' ||
-            (opts.direction === 'down' && opts.result instanceof Error),
+            (opts.direction === 'down' && opts.result instanceof Error)
         }),
         httpBatchLink({
           url: `${getBaseUrl()}/api/trpc`,
@@ -34,15 +34,15 @@ export const api = createTRPCNext<AppRouter>({
             if (ctx?.req) {
               return {
                 ...ctx.req.headers,
-                'x-ssr': '1',
+                'x-ssr': '1'
               };
             }
             return {};
-          },
-        }),
-      ],
+          }
+        })
+      ]
     };
-  },
+  }
   // ssr: true,
 });
 export type RouterInputs = inferRouterInputs<AppRouter>;

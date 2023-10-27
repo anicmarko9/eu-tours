@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
-
-import { slugifyString } from '@Helper/helper';
-import TourRating from '@Components/tools/TourRating';
+import { slugifyString } from 'src/helper/helper';
+import TourRating from '../tools/TourRating';
 import SlidingTour from './SlidingTour';
 
 const Tour = ({
   tourName,
   tourRating,
-  staticOrder,
+  staticOrder
 }: {
   tourName: string;
   tourRating: number;

@@ -4,12 +4,12 @@ import {
   List,
   Item,
   Trigger,
-  Content,
+  Content
 } from '@radix-ui/react-navigation-menu';
 
 const HeaderLinkGroup = ({
   links,
-  isHamburger,
+  isHamburger
 }: {
   links: {
     link: string;
@@ -19,7 +19,7 @@ const HeaderLinkGroup = ({
   isHamburger?: boolean;
 }): JSX.Element => {
   return (
-    <Root className={isHamburger ? "titleText" : "w-2/3"}>
+    <Root className={isHamburger ? 'titleText' : 'w-2/3'}>
       <List
         className={
           isHamburger
@@ -33,8 +33,8 @@ const HeaderLinkGroup = ({
               <Trigger>
                 <li>
                   <Link
-                    className={`hoverLinks hover:text-secondary ${
-                      isHamburger ? "hover:text-secondary" : "px-3"
+                    className={`hoverEffect ${
+                      isHamburger ? 'hover:text-secondary' : 'px-3'
                     }`}
                     href={link}
                   >
@@ -43,25 +43,25 @@ const HeaderLinkGroup = ({
                 </li>
               </Trigger>
               <Content>
-                <ul className="descriptionText bg-bodyBg absolute top-0 hidden flex-col rounded-lg lg:top-8 lg:flex">
+                <ul className="descriptionText absolute top-0 hidden flex-col rounded-lg lg:top-8 lg:flex">
                   {subLinks.map(
                     ({ subLink, subTitle }, index: number): JSX.Element => (
                       <li key={`${subLink}-${index}`} className="py-1">
                         <Link
-                          className={`hoverLinks ${
-                            isHamburger ? "hover:text-secondary" : "px-3"
+                          className={`hoverEffect ${
+                            isHamburger ? 'hover:text-secondary' : 'px-3'
                           }`}
                           href={subLink}
                         >
                           {subTitle}
                         </Link>
                       </li>
-                    ),
+                    )
                   )}
                 </ul>
               </Content>
             </Item>
-          ),
+          )
         )}
       </List>
     </Root>
