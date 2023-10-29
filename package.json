@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && prisma generate",
+    "build": "prisma generate && prisma migrate deploy && next build",
     "start": "next start",
+    "prisma-generate": "npx prisma generate",
+    "prisma-migrate": "npx prisma migrate dev",
     "lint": "eslint \"src/**/*.{ts,tsx,js}\" --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,css}\"",
     "typecheck": "tsc",

@@ -1,129 +1,163 @@
-// Models need to be lowercased because ElephantSQL requires that.
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("POSTGRES_URL")
 }
 
-model account {
-  id                       String  @id @default(uuid())
-  userId                   String
+model User {
+  id            String    @id(map: "PK_User") @default(uuid())
+  name          String?
+  email         String?   @unique(map: "UQ_User_email")
+  emailVerified DateTime? @map("email_verified")
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  tourId        String?   @map("tour_id")
+  tour          Tour?     @relation(fields: [tourId], references: [id], onDelete: SetNull, onUpdate: SetNull, map: "FK_User_Tour")
+  Booking       Booking[]
+  Review        Review[]
+
+  @@map("users")
+}
+
+model Account {
+  id                       String  @id(map: "PK_Account") @default(uuid())
+  userId                   String  @map("user_id")
   type                     String
   provider                 String
-  providerAccountId        String
-  refresh_token            String? // @db.Text
-  access_token             String? // @db.Text
+  providerAccountId        String  @map("provider_account_id")
+  refresh_token            String?
+  access_token             String?
   expires_at               BigInt?
   refresh_token_expires_in BigInt?
   token_type               String?
   scope                    String?
-  id_token                 String? // @db.Text
+  id_token                 String?
   session_state            String?
-  user                     user    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user                     User    @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FK_Account_User")
 
-  @@unique([provider, providerAccountId])
+  @@unique([provider, providerAccountId], map: "UQ_Account_provider")
+  @@map("accounts")
 }
 
-model session {
-  id           String   @id @default(uuid())
-  sessionToken String   @unique
-  userId       String
+model Session {
+  id           String   @id(map: "PK_Session") @default(uuid())
+  sessionToken String   @unique(map: "UQ_Session_token") @map("session_token")
+  userId       String   @map("user_id")
   expires      DateTime
-  user         user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FK_Session_User")
+
+  @@map("sessions")
 }
 
-model user {
-  id            String    @id @default(uuid())
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  image         String?   @default("https://res.cloudinary.com/dfptc3ila/image/upload/v1672134561/default_hmbqah.jpg")
-  accounts      account[]
-  sessions      session[]
-  tourId        String?
-  tour          tour?     @relation(fields: [tourId], references: [id])
-  review        review?
-  Booking       Booking[]
+model VerificationToken {
+  identifier String
+  token      String   @unique(map: "UQ_VerificationToken_token")
+  expires    DateTime
+
+  @@id([identifier, token], map: "PK_VerificationToken")
+  @@index([identifier], map: "IDX_VerificationToken_identifier")
+  @@index([token], map: "IDX_VerificationToken_token")
+  @@map("verification_tokens")
 }
 
-enum difficulty {
+enum Difficulty {
   easy
   medium
   difficult
+
+  @@map("difficulty_enum")
 }
 
-model tour {
-  id              String        @id @default(uuid())
-  name            String        @unique
+model Tour {
+  id              String        @id(map: "PK_Organization") @default(uuid())
+  name            String        @unique(map: "UQ_Tour_name")
   slug            String?
   duration        Float
-  maxGroupSize    Int
-  difficulty      difficulty
-  ratingsAverage  Float         @default(4.5)
-  ratingsQuantity Int           @default(0)
+  maxGroupSize    Int           @map("max_group_size")
+  difficulty      Difficulty
+  ratingsAverage  Float         @default(4.5) @map("ratings_average")
+  ratingsQuantity Int           @default(0) @map("ratings_quantity")
   price           Float
-  priceDiscount   Float?
+  priceDiscount   Float?        @map("price_discount")
   summary         String
   description     String?
-  imageCover      String
+  imageCover      String        @map("image_cover")
   images          String[]
-  createdAt       DateTime      @default(now())
-  startDates      DateTime[]
-  secretTour      Boolean       @default(false)
-  startLocationId String        @unique
-  startLocation   startLocation @relation(fields: [startLocationId], references: [id])
-  locations       location[]
-  guides          user[]
-  review          review[]
-  Booking         Booking[]
+  startDates      DateTime[]    @map("start_dates")
+  secretTour      Boolean       @default(false) @map("secret_tour")
+  createdAt       DateTime      @default(now()) @map("created_at")
+  updatedAt       DateTime      @updatedAt @map("updated_at")
+  deletedAt       DateTime?     @map("deleted_at")
+  startLocationId String        @unique @map("start_location_id")
+  startLocation   StartLocation @relation(fields: [startLocationId], references: [id], onDelete: Cascade, map: "FK_Tour_StartLocation")
+  locations       Location[]
+  guides          User[]
+  reviews         Review[]
+  bookings        Booking[]
+
+  @@map("tours")
 }
 
-enum geojson {
+enum GeoJSON {
   point
+
+  @@map("geo_json_enum")
 }
 
-model startLocation {
-  id          String  @id @default(uuid())
-  type        geojson @default(point)
+model StartLocation {
+  id          String  @id(map: "PK_StartLocation") @default(uuid())
+  type        GeoJSON @default(point)
   coordinates Float[]
   address     String
   description String
-  tour        tour?
+  tour        Tour?
+
+  @@map("start_locations")
 }
 
-model location {
-  id          String  @id @default(uuid())
-  type        geojson @default(point)
+model Location {
+  id          String  @id(map: "PK_Location") @default(uuid())
+  type        GeoJSON @default(point)
   coordinates Float[]
   address     String
   description String
   day         Int
-  tourId      String  @unique
-  tour        tour    @relation(fields: [tourId], references: [id])
+  tourId      String  @map("tour_id")
+  tour        Tour    @relation(fields: [tourId], references: [id], onDelete: Cascade, map: "FK_Location_Tour")
+
+  @@map("locations")
 }
 
-model review {
-  id        String   @id @default(uuid())
+model Review {
+  id        String    @id(map: "PK_Review") @default(uuid())
   review    String
   rating    Float
-  createdAt DateTime @default(now())
-  tour      tour     @relation(fields: [tourId], references: [id])
-  tourId    String   @unique
-  user      user     @relation(fields: [userId], references: [id])
-  userId    String   @unique
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+  tourId    String    @map("tour_id")
+  tour      Tour      @relation(fields: [tourId], references: [id], onDelete: Cascade, map: "FK_Review_Tour")
+  userId    String    @map("user_id")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FK_Review_User")
+
+  @@map("reviews")
 }
 
 model Booking {
-  id        String   @id @default(uuid())
-  tour      tour     @relation(fields: [tourId], references: [id])
-  tourId    String   @unique
-  user      user     @relation(fields: [userId], references: [id])
-  userId    String   @unique
+  id        String    @id(map: "PK_Booking") @default(uuid())
   price     Float
-  createdAt DateTime @default(now())
-  paid      Boolean  @default(true)
+  paid      Boolean   @default(true)
+  tourId    String    @map("tour_id")
+  tour      Tour      @relation(fields: [tourId], references: [id], onDelete: Cascade, map: "FK_Booking_Tour")
+  userId    String    @map("user_id")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FK_Booking_User")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  @@map("bookings")
 }
