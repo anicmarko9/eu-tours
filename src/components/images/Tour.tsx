@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react';
-import { slugifyString } from 'src/helper/helper';
-import TourRating from '../tools/TourRating';
-import SlidingTour from './SlidingTour';
 
-const Tour = ({
+import SlidingTour from './SlidingTour';
+import TourRating from '@Components/tools/TourRating';
+import { slugifyString } from '@Utils/slug';
+
+export default function Tour({
   tourName,
   tourRating,
-  staticOrder
+  staticOrder,
 }: {
   tourName: string;
   tourRating: number;
   staticOrder: string;
-}): JSX.Element => {
+}): JSX.Element {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -24,15 +25,13 @@ const Tour = ({
 
   return (
     <section className={staticOrder}>
-      <h2 className="tourText">{tourName}</h2>
+      <h2 className='tourText'>{tourName}</h2>
       <TourRating rating={tourRating} />
       {imageLoaded ? (
         <SlidingTour src={`/images/${slugifyString(tourName)}.png`} />
       ) : (
-        <div className="flex justify-center items-center w-12 h-12 rounded-full animate-spin border-8 border-solid border-orange-500 border-t-transparent"></div>
+        <div className='flex h-12 w-12 animate-spin items-center justify-center rounded-full border-8 border-solid border-orange-500 border-t-transparent'></div>
       )}
     </section>
   );
-};
-
-export default Tour;
+}

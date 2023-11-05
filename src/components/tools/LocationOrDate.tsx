@@ -1,39 +1,38 @@
 import { SlLocationPin } from 'react-icons/sl';
 import { IoIosArrowDown } from 'react-icons/io';
 import { MdOutlineCalendarMonth } from 'react-icons/md';
-import type { SelectionType } from 'src/types/types';
 
-const LocationOrDate = ({
+import { SelectionType } from '@Types/enum';
+
+export default function LocationOrDate({
   choose,
   location,
-  date
+  date,
 }: {
   choose: SelectionType;
   location?: string;
   date?: string;
-}): JSX.Element => {
+}): JSX.Element {
   return (
-    <div className="flex items-center space-x-4 sm:w-fit">
-      {choose === 'Location' ? (
-        <SlLocationPin className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
+    <div className='flex items-center space-x-4 sm:w-fit'>
+      {choose === SelectionType.Location ? (
+        <SlLocationPin className='text-lg text-green-600 sm:text-2xl xl:text-3xl' />
       ) : (
-        <MdOutlineCalendarMonth className="text-lg text-green-600 sm:text-2xl xl:text-3xl" />
+        <MdOutlineCalendarMonth className='text-lg text-green-600 sm:text-2xl xl:text-3xl' />
       )}
-      <div className="hoverEffect cursor-pointer">
-        <h2 className="space-x-2">
+      <div className='hoverEffect cursor-pointer'>
+        <h2 className='space-x-2'>
           <span>{choose}</span>
-          <IoIosArrowDown className="hoverEffect inline text-secondary" />
+          <IoIosArrowDown className='hoverEffect inline text-secondary' />
         </h2>
-        <h2 className="text-white">
-          {choose === 'Location' ? (
+        <h2 className='text-white'>
+          {choose === SelectionType.Location ? (
             location
           ) : (
-            <time dateTime="2023-09-16">{date}</time>
+            <time dateTime='2023-09-16'>{date}</time>
           )}
         </h2>
       </div>
     </div>
   );
-};
-
-export default LocationOrDate;
+}

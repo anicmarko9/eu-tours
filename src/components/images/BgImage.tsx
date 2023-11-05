@@ -1,19 +1,17 @@
 import Image from 'next/image';
 
-const BgImage = ({ src }: { src: string }): JSX.Element => {
+export default function BgImage({ src }: { src: string }): JSX.Element {
   return (
-    <figure className="absolute inset-0 h-full w-full">
+    <figure className='absolute inset-0 h-full w-full'>
       <Image
         fill
         src={src}
-        alt="Background Image"
-        className="object-cover"
-        placeholder="blur"
+        alt='Background Image'
+        className='object-cover'
+        placeholder='blur'
         blurDataURL={src}
-        loading="eager"
+        loading='eager'
       />
     </figure>
   );
-};
-
-export default BgImage;
+}

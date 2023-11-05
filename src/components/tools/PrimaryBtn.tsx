@@ -1,16 +1,18 @@
 import { signIn, signOut } from 'next-auth/react';
-import type { AuthType } from 'src/types/types';
+import { useRouter } from 'next/navigation';
+import { type AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
-const PrimaryBtn = ({
+import { AuthType } from '@Types/enum';
+
+export default function PrimaryBtn({
   authType,
-  text
+  text,
 }: {
   authType?: AuthType;
   text?: string;
-}): JSX.Element => {
-  const handleSubmit = (): void => {
-    console.log('Not implemented yet!');
-  };
+}): JSX.Element {
+  const router: AppRouterInstance = useRouter();
+
   return (
     <button
       className={`gradientOrangeButton h-12 w-[120px] self-center rounded-lg border-2 border-white px-4 text-base font-bold capitalize tracking-wider text-white lg:self-end ${
@@ -18,17 +20,15 @@ const PrimaryBtn = ({
       }`}
       onClick={() =>
         authType
-          ? authType === 'Sign Out'
+          ? authType === AuthType.SignOut
             ? void signOut({
-                callbackUrl: process.env.NEXTAUTH_URL
+                callbackUrl: process.env.NEXTAUTH_URL,
               })
             : void signIn()
-          : handleSubmit()
+          : router.push('/')
       }
     >
       {authType ? authType : text}
     </button>
   );
-};
-
-export default PrimaryBtn;
+}

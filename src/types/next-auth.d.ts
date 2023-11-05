@@ -1,4 +1,5 @@
-import { DefaultSession } from 'next-auth';
+import type { DefaultSession } from 'next-auth';
+import type { NextRequest, NextResponse } from 'next/server';
 
 declare module 'next-auth' {
   interface Session {
@@ -7,3 +8,8 @@ declare module 'next-auth' {
     } & DefaultSession['user'];
   }
 }
+
+export type AuthHandler = (
+  req: NextRequest,
+  res: NextResponse,
+) => Promise<void>;
